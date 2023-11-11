@@ -132,69 +132,12 @@ header {
     grid-area: INFO;
     height: 150px;
 }
-.animation {
+.lhsz_slogan {
     grid-area: ANIM;
+    display: none;
     width: 540px;
     height: 150px;
-    overflow: hidden;
-    z-index: 3;
-    display: none;
-    background-image:
-        url(../resources/index_images/header_animation/animation_main.png),
-        url(../resources/index_images/header_animation/animation_1.png),
-        url(../resources/index_images/header_animation/animation_2.png),
-        url(../resources/index_images/header_animation/animation_3.png),
-        url(../resources/index_images/header_animation/animation_4.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
 }
-.animation:hover {
-    animation-name: lhsz_anim;
-    animation-duration: 20000ms;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
-}
-@keyframes lhsz_anim {
-    10%, 30%, 50%, 70%, 90% {
-        opacity: 0.6;
-        box-shadow: 0 0 5px 3px var(--color_white);
-        background-position: left;
-        filter: blur(5px);
-    }
-    13%, 33%, 53%, 73%, 93% {
-        opacity: 0;
-        box-shadow: none;
-        background-position: left;
-    }
-    16%, 36%, 56%, 76%, 96% {
-        opacity: 0;
-        box-shadow: none;
-        background-position: right;
-    }
-    20%, 40%, 60%, 80%, 100% {
-        opacity: 0.6;
-        box-shadow: 0 0 5px 3px var(--color_white);
-        filter: none;
-    }
-    0%, 10% {
-        background-image: url(../resources/index_images/animation_main.png);
-    }
-    20%, 30% {
-        background-image: url(../resources/index_images/animation_1.png);
-    }
-    40%, 50% {
-        background-image: url(../resources/index_images/animation_2.png);
-    }
-    60%, 70% {
-        background-image: url(../resources/index_images/animation_3.png);
-    }
-    80%, 90% {
-        background-image: url(../resources/index_images/animation_4.png);
-    }
-}
-
-
 
 /* ----------------------------- */
 /* A NAV elemeinek beállítása   */
@@ -339,6 +282,15 @@ aside .aside_toggle.active {
     background-color: var(--color_hover_active_red);
     box-shadow: 0 0 5px 3px var(--color_hover_active_red) inset;
 }
+aside .aside_toggle .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 24;
+    font-size: 2.5em;
+    transition: all 0.8s linear;
+}
 aside .aside_toggle.active .material-symbols-outlined {
     opacity: 0;
 }
@@ -369,14 +321,6 @@ aside .aside_toggle.active::after {
 
 
 
-aside .aside_toggle .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 500,
-    'GRAD' 0,
-    'opsz' 24;
-    font-size: 2.5em;
-}
 aside .aside_content {
     display: flex;
     flex-direction: column;
@@ -492,7 +436,7 @@ footer {
         width: 600px;
         height: 380px;
     }
-    .animation {
+    .lhsz_slogan {
         display: block;
     }
 }
