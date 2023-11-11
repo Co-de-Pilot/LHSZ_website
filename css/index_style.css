@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+@property --color_main_blue {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgba(0, 187, 255, 0.2)
+}
+
+@property --color_hover_active_red {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgba(255, 80, 80, 0.8)
+}
+
+@property --color_font {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgba(54,0,0, 0.8);
+}
+
+@property --color_white {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgb(255, 255, 255);
+}
+
+
+/* ----------------------------- */
+/* A RESET beállítása            */
+/* ----------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+}
+
+
+/* ----------------------------- */
+/* A HTML elemeinek beállítása   */
+/* ----------------------------- */
+html {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+body {
+    min-width: 330px;
+    display: grid;
+    grid-template-areas:
+    "HEADER HEADER"
+    "NAV ASIDE"
+    "MAIN MAIN"
+    "FOOTER FOOTER";
+}
+
+
+/* ---------------------------------- */
+/* Az általános stílusok beállítása   */
+/* ---------------------------------- */
+.box-shadow_white {
+    box-shadow: 0 0 5px 3px var(--color_white);
+}
+.opacity_60 {
+    opacity: 0.6;
+}
+
+
+/* ----------------------------- */
+/* A HEADER elemeinek beállítása */
+/* ----------------------------- */
+header {
+    grid-area: HEADER;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-image:
+    url(../resources/index_images/header_background/hbg_1.png),
+    url(../resources/index_images/header_background/hbg_2.png),
+    url(../resources/index_images/header_background/hbg_3.png),
+    url(../resources/index_images/header_background/hbg_4.png),
+    url(../resources/index_images/header_background/hbg_5.png);
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 20px 20px var(--color_white) inset;
+    animation-name: header_anim;
+    animation-duration: 30s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes header_anim {
+    0%, 10% {
+        background-image: url(../resources/index_images/header_background/hbg_1.png);
+    }
+    20%, 30% {
+        background-image: url(../resources/index_images/header_background/hbg_2.png);
+    }
+    40%, 50% {
+        background-image: url(../resources/index_images/header_background/hbg_3.png);
+    }
+    60%, 70% {
+        background-image: url(../resources/index_images/header_background/hbg_4.png);
+    }
+    80%, 90% {
+        background-image: url(../resources/index_images/header_background/hbg_5.png);
+    }
+}
+.header_items {
+    display: grid;
+    grid-template-areas:
+    "LOGO"
+    "INFO";
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 300px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+    border-radius: 5px;
+}
+.header_items img{
+    object-fit: cover;
+}
+.logo {
+    grid-area: LOGO;
+    height: 150px;
+}    
+.lhsz_info {
+    grid-area: INFO;
+    height: 150px;
+}
+.animation {
+    grid-area: ANIM;
+    width: 540px;
+    height: 150px;
+    overflow: hidden;
+    z-index: 3;
+    display: none;
+    background-image:
+        url(../resources/index_images/header_animation/animation_main.png),
+        url(../resources/index_images/header_animation/animation_1.png),
+        url(../resources/index_images/header_animation/animation_2.png),
+        url(../resources/index_images/header_animation/animation_3.png),
+        url(../resources/index_images/header_animation/animation_4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+.animation:hover {
+    animation-name: lhsz_anim;
+    animation-duration: 20000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+@keyframes lhsz_anim {
+    10%, 30%, 50%, 70%, 90% {
+        opacity: 0.6;
+        box-shadow: 0 0 5px 3px var(--color_white);
+        background-position: left;
+        filter: blur(5px);
+    }
+    13%, 33%, 53%, 73%, 93% {
+        opacity: 0;
+        box-shadow: none;
+        background-position: left;
+    }
+    16%, 36%, 56%, 76%, 96% {
+        opacity: 0;
+        box-shadow: none;
+        background-position: right;
+    }
+    20%, 40%, 60%, 80%, 100% {
+        opacity: 0.6;
+        box-shadow: 0 0 5px 3px var(--color_white);
+        filter: none;
+    }
+    0%, 10% {
+        background-image: url(../resources/index_images/animation_main.png);
+    }
+    20%, 30% {
+        background-image: url(../resources/index_images/animation_1.png);
+    }
+    40%, 50% {
+        background-image: url(../resources/index_images/animation_2.png);
+    }
+    60%, 70% {
+        background-image: url(../resources/index_images/animation_3.png);
+    }
+    80%, 90% {
+        background-image: url(../resources/index_images/animation_4.png);
+    }
+}
+
+
+
+/* ----------------------------- */
+/* A NAV elemeinek beállítása   */
+/* ----------------------------- */
+nav {
+    grid-area: NAV;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: sticky;
+    top: 1%;
+    width: 220px;
+    height: auto;
+    padding: 0.5rem;
+    gap: 10px;
+    z-index: 3;
+}
+nav ul.toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: normal;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+    border-radius: 5px;
+    transition: all 0.5s linear;
+    cursor: pointer;
+}
+nav ul.toggle.active{
+    background-color: var(--color_hover_active_red);
+    box-shadow: 0 0 5px 3px var(--color_hover_active_red) inset;
+}
+nav ul.toggle li{
+    list-style: none;
+    position: relative;
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+nav ul.toggle.active li:nth-of-type(1){
+    transform: translateY(13.5px) rotate(45deg);
+}
+nav ul.toggle.active li:nth-of-type(2){
+    opacity: 0;
+}
+nav ul.toggle.active li:nth-of-type(3){
+    transform: translateY(-13.5px) rotate(-45deg);
+}
+nav ul.menu{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    list-style-type: none;
+    padding: 3px;
+    right: 120%;
+    transition: 0.8s;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+    border-radius: 5px;
+}
+nav ul.menu.active{
+    right: 0%;
+}
+nav ul.menu li{
+    list-style: none;
+    position: relative;
+    width: 180px;
+    text-align: left;
+}
+nav ul.menu li a{
+    position: relative;
+    text-transform: uppercase;
+    display: block;
+    padding: 8px;
+    margin: 1px;
+    font-size: 1.1rem;
+    color: var(--color_font);
+    transition: all 0.5s linear;
+}
+nav ul.menu li:hover a{
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_hover_active_red);
+    box-shadow: 0 0 5px 3px var(--color_hover_active_red);
+    border-radius: 3px;
+}
+nav ul.menu li a:active {
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_hover_active_red);
+    box-shadow: 0 0 5px 3px var(--color_hover_active_red);
+    border-radius: 3px;
+}
+
+
+/* ------------------------------ */
+/* Az ASIDE rész elemeinek beállítása */
+/* ------------------------------ */
+aside {
+    grid-area: ASIDE;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 10px;
+    position: sticky;
+    width: 130px;
+    height: 660px;
+    padding: 0.5rem;
+    top: 1%;
+    left: calc(100% - 130px);
+    z-index: 2;
+/*     outline: 3px solid black; */
+}
+aside .aside_toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+    border-radius: 5px;
+    transition: all 0.8s linear;
+    cursor: pointer;
+}
+aside .aside_toggle.active {
+    background-color: var(--color_hover_active_red);
+    box-shadow: 0 0 5px 3px var(--color_hover_active_red) inset;
+}
+aside .aside_toggle.active .material-symbols-outlined {
+    opacity: 0;
+}
+aside .aside_toggle::before {
+    opacity: 0;
+    content: "";
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+aside .aside_toggle.active::before {
+    opacity: 1;
+    transform: translateY(22px) rotate(45deg);
+}
+aside .aside_toggle::after {
+    opacity: 0;
+    content: "";
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+aside .aside_toggle.active::after {
+    opacity: 1;
+    transform: translateY(-22px) rotate(-45deg);
+}
+
+
+
+aside .aside_toggle .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 24;
+    font-size: 2.5em;
+}
+aside .aside_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    width: 110px;
+    height: 600px;
+    left: 120%;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+    border-radius: 5px;
+    transition: all 0.8s ease;
+}
+aside .aside_content.active {
+    left: 0;
+}
+aside .aside_content .aside_content_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+}
+aside img {
+    object-fit: cover;
+}
+aside .aside_content a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* ------------------------------ */
+/* A MAIN rész elemeinek beállítása */
+/* ------------------------------ */
+main {
+    grid-area: MAIN;
+/*     display: grid;
+    grid-template-columns: auto calc(100px + 2%); */
+    position: relative;
+    z-index: 0;
+}
+main p {
+    font-size: 1rem;
+}
+.content {
+    padding: 1%;
+}
+
+
+/* ----------------------------- */
+/* A FOOTER elemeinek beállítása */
+/* ----------------------------- */
+footer {
+    grid-area: FOOTER;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+}
+.footer_items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 1;
+    padding: 5px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+    border-radius: 5px;
+}
+
+.social_media {
+    display: flex;
+    height: 30px;
+}    
+.social_media_items img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.copyright {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 3px;
+    white-space: nowrap;
+    background-color: var(--color_white);
+}
+.copyright p{
+    padding: 2px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+
+
+
+@media screen and (min-width: 670px) {
+    .header_items{
+        grid-template-areas:
+        "LOGO INFO"
+        "ANIM ANIM";
+        width: 600px;
+        height: 380px;
+    }
+    .animation {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    body {
+        grid-template-areas:
+        "HEADER HEADER"
+        "NAV NAV"
+        "MAIN ASIDE"
+        "FOOTER FOOTER";
+    }
+    nav {
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 1%;
+    }
+    nav ul {
+        margin: auto;
+    }
+    nav ul.toggle{
+        display: none;
+    }
+    nav ul.menu{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-evenly;
+        right: 0;
+    }
+    nav ul.menu li {
+        display: inline;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1060px) {
+    nav ul.menu {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        background-size: contain;
+        background-repeat: repeat-x;
+    }
+    .header_items {
+        grid-template-areas:
+        "LOGO INFO ANIM";
+        justify-content: space-evenly;
+        width: auto;
+        height: auto;
+    }
+}
