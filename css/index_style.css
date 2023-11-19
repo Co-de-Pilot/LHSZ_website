@@ -3,10 +3,16 @@
 @property --color_main_blue {
     syntax: "<color>";
     inherits: true;
-    initial-value: rgba(0, 187, 255, 0.2)
+    initial-value: rgba(0, 180, 250, 0.1)
 }
 
-@property --color_hover_active_red {
+@property --color_glow_blue {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgba(11, 138, 211, 0.8)
+}
+
+@property --color_active_red {
     syntax: "<color>";
     inherits: true;
     initial-value: rgba(255, 80, 80, 0.8)
@@ -15,7 +21,7 @@
 @property --color_font {
     syntax: "<color>";
     inherits: true;
-    initial-value: rgba(54,0,0, 0.8);
+    initial-value: rgba(80,0,0, 0.8);
 }
 
 @property --color_white {
@@ -63,6 +69,11 @@ body {
 }
 .opacity_60 {
     opacity: 0.6;
+}
+.box-shadow_glblue {
+/*     border: 2px solid var(--color_glow_blue); */
+    box-shadow: 0 0 8px 2px var(--color_glow_blue);
+/*     box-shadow: 0 0 8px 1px var(--color_glow_blue) inset; */
 }
 
 
@@ -117,8 +128,8 @@ header {
     width: 300px;
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+/*     background-color: var(--color_main_blue); */
+/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
 }
 .header_items img{
@@ -168,15 +179,15 @@ nav ul.toggle{
     width: 50px;
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+/*     background-color: var(--color_main_blue); */
+/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
     transition: all 0.5s linear;
     cursor: pointer;
 }
 nav ul.toggle.active{
-    background-color: var(--color_hover_active_red);
-    box-shadow: 0 0 5px 3px var(--color_hover_active_red) inset;
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
 }
 nav ul.toggle li{
     list-style: none;
@@ -205,8 +216,8 @@ nav ul.menu{
     transition: 0.8s;
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+/*     background-color: var(--color_main_blue); */
+/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
 }
 nav ul.menu.active{
@@ -215,10 +226,10 @@ nav ul.menu.active{
 nav ul.menu li{
     list-style: none;
     position: relative;
-    width: 180px;
+    width: 200px;
     text-align: left;
 }
-nav ul.menu li a{
+/* nav ul.menu li a{
     position: relative;
     text-transform: uppercase;
     display: block;
@@ -231,16 +242,109 @@ nav ul.menu li a{
 nav ul.menu li:hover a{
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_hover_active_red);
-    box-shadow: 0 0 5px 3px var(--color_hover_active_red);
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 5px 3px var(--color_active_red);
     border-radius: 3px;
 }
 nav ul.menu li a:active {
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_hover_active_red);
-    box-shadow: 0 0 5px 3px var(--color_hover_active_red);
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 5px 3px var(--color_active_red);
     border-radius: 3px;
+} */
+.glowing-button {
+    position: relative;
+    color: var(--color_font);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    font-weight: 700;
+    display: block;
+    padding: 8px;
+    margin: 1px;
+    background: transparent;
+    transition: all 0.8s linear;
+}
+.glowing-button .button-text {
+    position: relative;
+    z-index: 1;
+}
+.glowing-button:hover {
+    color: var(--color_glow_blue);
+/*     letter-spacing: 0.1rem; */
+    text-shadow: 0 0 8px var(--color_glow_blue);
+}
+.glowing-button:active {
+    color: var(--color_active_red);
+/*     letter-spacing: 0.1rem; */
+    text-shadow: 0 0 8px var(--color_active_red);
+}
+.glowing-button .top-bottom, .glowing-button .left-right {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+.glowing-button .top-bottom::before, .glowing-button .top-bottom::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    background-color: var(--color_glow_blue);
+    transition: all 0.8s ease-in-out;
+}
+.glowing-button .top-bottom::before {
+    top: 0;
+}
+.glowing-button .top-bottom::after {
+    bottom: 0;
+}
+.glowing-button:hover .top-bottom::before, .glowing-button:hover .top-bottom::after {
+    box-shadow: 0 0 8px 2px var(--color_glow_blue);
+    width: 100%;
+}
+.glowing-button:active .top-bottom::before, .glowing-button:active .top-bottom::after {
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
+    width: 100%;
+}
+.glowing-button .left-right::before, .glowing-button .left-right::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    top: 0;
+    opacity: 0;
+    background-color: var(--color_glow_blue);
+}
+.glowing-button .left-right::before {
+    transition-property: opacity, box-shadow;
+    transition-duration: 0s, 0.8s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.8s, 0s;
+    left: 0;
+}
+.glowing-button .left-right::after {
+    right: 0;
+}
+.glowing-button:hover .left-right::before, .glowing-button:hover .left-right::after {
+    box-shadow: 0 0 8px 2px var(--color_glow_blue);
+    opacity: 1;
+}
+.glowing-button:hover .left-right::before {
+    transition-delay: 0s, 0s;
+}
+.glowing-button:hover .left-right::after {
+    transition-delay: 0.8s;
+}
+.glowing-button:active .left-right::before, .glowing-button:active .left-right::after {
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.8s, 0.8s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 
@@ -256,7 +360,7 @@ aside {
     gap: 10px;
     position: sticky;
     width: 130px;
-    height: 600px;
+    height: calc(100vh - 60px);
     overflow: hidden;
     padding: 0.5rem;
     top: 0;
@@ -272,15 +376,15 @@ aside .aside_toggle {
     width: 50px;
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+/*     background-color: var(--color_main_blue); */
+/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
     transition: all 0.8s linear;
     cursor: pointer;
 }
 aside .aside_toggle.active {
-    background-color: var(--color_hover_active_red);
-    box-shadow: 0 0 5px 3px var(--color_hover_active_red) inset;
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
 }
 aside .aside_toggle img {
     width: 42px;
@@ -321,13 +425,13 @@ aside .aside_content {
     align-items: center;
     gap: 5px;
     position: relative;
-    width: 110px;
-    height: 520px;
-    left: 120%;
+    width: auto;
+    height: inherit;
+    left: 130%;
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+/*     background-color: var(--color_main_blue);
+    box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
     transition: all 0.8s ease;
 }
@@ -338,7 +442,7 @@ aside .aside_content .aside_content_items{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100px;
+    width: 110px;
 }
 aside img {
     object-fit: cover;
@@ -376,7 +480,6 @@ footer {
     grid-area: FOOTER;
     display: block;
     width: 100%;
-    height: auto;
     padding: 0.5rem;
     position: fixed;
     bottom: 0;
@@ -387,31 +490,37 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     row-gap: 10px;
-    column-gap: 50px;
+    column-gap: 2%;
     min-width: 330px;
     z-index: 1;
     padding: 5px;
     background: transparent;
     backdrop-filter: blur(3px);
-    background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset;
+/*     background-color: var(--color_main_blue); */
+/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
 }
 .social_media {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    width: 300px;
-    background-color: var(--color_white);
-}    
+    column-gap: 5px;
+    width: fit-content;
+/*     background-color: var(--color_white); */
+}
+.social_media_items{
+    padding: 0 10px;
+} 
 .social_media_items img {
-    height: 1.7rem;
+    height: 1.5rem;
     object-fit: cover;
+    transition: all 0.3s linear;
 }
-.social_media p {
-    font-size: 0.8rem;
+.social_media_items img:hover {
+    background-color: var(--color_white);
+    box-shadow: 0 0 5px 5px var(--color_white);
 }
-.copyright {
+.icons8, .copyright {
     position: relative;
     width: auto;
     height: auto;
@@ -419,7 +528,7 @@ footer {
     white-space: nowrap;
     background-color: var(--color_white);
 }
-.copyright p{
+.copyright p, .icons8 p{
     padding: 2px;
     font-size: 0.8rem;
 }
@@ -427,7 +536,7 @@ footer {
 
 
 
-@media screen and (min-width: 670px) {
+@media screen and (min-width: 768px) {
     .header_items{
         grid-template-areas:
         "LOGO INFO"
@@ -440,13 +549,12 @@ footer {
     }
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 992px) {
     body {
         grid-template-areas:
         "HEADER HEADER"
         "NAV NAV"
-        "ASIDE ASIDE"
-        "MAIN MAIN"
+        "MAIN ASIDE"
         "FOOTER FOOTER";
     }
     nav {
@@ -460,9 +568,9 @@ footer {
     nav ul.toggle{
         display: none;
     }
-    nav ul.menu{
+    nav ul.menu {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(7, 1fr);
         justify-content: space-evenly;
         right: 0;
     }
@@ -471,36 +579,19 @@ footer {
         width: auto;
     }
     aside {
-        top: 95px;
-    }
-    main {
-        top: -600px;
-    }
-}
-
-@media screen and (min-width: 1060px) {
-    body {
-        grid-template-areas:
-        "HEADER HEADER"
-        "NAV NAV"
-        "MAIN ASIDE"
-        "FOOTER FOOTER";
-    }
-    nav ul.menu {
-        grid-template-columns: repeat(8, 1fr);
-    }
-    aside {
         top: 60px;
     }
     aside .aside_toggle {
         display: none;
     }
     aside .aside_content {
-        height: 585px;
         left: 0;
     }
     main {
         top: 0;
+    }
+    footer {
+        width: calc(100vw - 140px);
     }
 }
 

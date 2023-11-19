@@ -1,6 +1,8 @@
 /*A CODE-PILOT logo elemeinek beállítása */
 .code_pilot_container {
     position: relative;
+    top: 0;
+    left: 0;
     width: 110px;
     height: 23px;
     margin: 3px;
@@ -21,6 +23,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
+    overflow: hidden;
 }
 .code_pilot:hover {
     animation-name: code_pilot_anim;
@@ -69,7 +72,7 @@
     }
     60% {
         transform: scale(1.2);
-        box-shadow: 0 0 5px 3px var(--color_white);
+        box-shadow: 0 0 5px 3px white;
     }
     95% {
         background-position: left;
