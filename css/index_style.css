@@ -71,196 +71,14 @@ body {
     opacity: 0.6;
 }
 .box-shadow_glblue {
-/*     border: 2px solid var(--color_glow_blue); */
     box-shadow: 0 0 8px 2px var(--color_glow_blue);
-/*     box-shadow: 0 0 8px 1px var(--color_glow_blue) inset; */
 }
-
-
-/* ----------------------------- */
-/* A HEADER elemeinek beállítása */
-/* ----------------------------- */
-header {
-    grid-area: HEADER;
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-    background-image:
-    url(../resources/index_images/header_background/hbg_1.png),
-    url(../resources/index_images/header_background/hbg_2.png),
-    url(../resources/index_images/header_background/hbg_3.png),
-    url(../resources/index_images/header_background/hbg_4.png),
-    url(../resources/index_images/header_background/hbg_5.png);
-    background-position: center center;
-    background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color_white) inset;
-    animation-name: header_anim;
-    animation-duration: 30s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-@keyframes header_anim {
-    0%, 10% {
-        background-image: url(../resources/index_images/header_background/hbg_1.png);
-    }
-    20%, 30% {
-        background-image: url(../resources/index_images/header_background/hbg_2.png);
-    }
-    40%, 50% {
-        background-image: url(../resources/index_images/header_background/hbg_3.png);
-    }
-    60%, 70% {
-        background-image: url(../resources/index_images/header_background/hbg_4.png);
-    }
-    80%, 90% {
-        background-image: url(../resources/index_images/header_background/hbg_5.png);
-    }
-}
-.header_items {
-    display: grid;
-    grid-template-areas:
-    "LOGO"
-    "INFO";
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
-    padding: 20px;
-    width: 300px;
-    background: transparent;
-    backdrop-filter: blur(3px);
-/*     background-color: var(--color_main_blue); */
-/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
-    border-radius: 5px;
-}
-.header_items img{
-    object-fit: cover;
-}
-.logo {
-    grid-area: LOGO;
-    height: 150px;
-}    
-.lhsz_info {
-    grid-area: INFO;
-    height: 150px;
-}
-.lhsz_slogan {
-    grid-area: ANIM;
-    display: none;
-    width: 540px;
-    height: 150px;
-}
-
-/* ----------------------------- */
-/* A NAV elemeinek beállítása   */
-/* ----------------------------- */
-nav {
-    grid-area: NAV;
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: sticky;
-    top: 0;
-    width: 220px;
-    height: auto;
-    padding: 0.5rem;
-    gap: 10px;
-    z-index: 3;
-}
-nav ul.toggle{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    align-self: normal;
-    position: relative;
-    height: 50px;
-    width: 50px;
-    background: transparent;
-    backdrop-filter: blur(3px);
-/*     background-color: var(--color_main_blue); */
-/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
-    border-radius: 5px;
-    transition: all 0.5s linear;
-    cursor: pointer;
-}
-nav ul.toggle.active{
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
-}
-nav ul.toggle li{
-    list-style: none;
-    position: relative;
-    width: 80%;
-    height: 4px;
-    background: var(--color_font);
-    transition: all 0.8s linear;
-}
-nav ul.toggle.active li:nth-of-type(1){
-    transform: translateY(13.5px) rotate(45deg);
-}
-nav ul.toggle.active li:nth-of-type(2){
-    opacity: 0;
-}
-nav ul.toggle.active li:nth-of-type(3){
-    transform: translateY(-13.5px) rotate(-45deg);
-}
-nav ul.menu{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    list-style-type: none;
-    padding: 3px;
-    right: 120%;
-    transition: 0.8s;
-    background: transparent;
-    backdrop-filter: blur(3px);
-/*     background-color: var(--color_main_blue); */
-/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
-    border-radius: 5px;
-}
-nav ul.menu.active{
-    right: 0%;
-}
-nav ul.menu li{
-    list-style: none;
-    position: relative;
-    width: 200px;
-    text-align: left;
-}
-/* nav ul.menu li a{
-    position: relative;
-    text-transform: uppercase;
-    display: block;
-    padding: 8px;
-    margin: 1px;
-    font-size: 1.1rem;
-    color: var(--color_font);
-    transition: all 0.5s linear;
-}
-nav ul.menu li:hover a{
-    background: transparent;
-    backdrop-filter: blur(3px);
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 5px 3px var(--color_active_red);
-    border-radius: 3px;
-}
-nav ul.menu li a:active {
-    background: transparent;
-    backdrop-filter: blur(3px);
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 5px 3px var(--color_active_red);
-    border-radius: 3px;
-} */
 .glowing-button {
     position: relative;
     color: var(--color_font);
-    text-decoration: none;
     text-transform: uppercase;
     font-size: 1.0rem;
     font-weight: 700;
-    display: block;
     padding: 8px;
     margin: 1px;
     background: transparent;
@@ -272,12 +90,10 @@ nav ul.menu li a:active {
 }
 .glowing-button:hover {
     color: var(--color_glow_blue);
-/*     letter-spacing: 0.1rem; */
     text-shadow: 0 0 8px var(--color_glow_blue);
 }
 .glowing-button:active {
     color: var(--color_active_red);
-/*     letter-spacing: 0.1rem; */
     text-shadow: 0 0 8px var(--color_active_red);
 }
 .glowing-button .top-bottom, .glowing-button .left-right {
@@ -348,6 +164,159 @@ nav ul.menu li a:active {
 }
 
 
+
+/* ----------------------------- */
+/* A HEADER elemeinek beállítása */
+/* ----------------------------- */
+header {
+    grid-area: HEADER;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-image:
+    url(../resources/index_images/header_background/hbg_1.png),
+    url(../resources/index_images/header_background/hbg_2.png),
+    url(../resources/index_images/header_background/hbg_3.png),
+    url(../resources/index_images/header_background/hbg_4.png),
+    url(../resources/index_images/header_background/hbg_5.png);
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 20px 20px var(--color_white) inset;
+    animation-name: header_anim;
+    animation-duration: 30s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes header_anim {
+    0%, 10% {
+        background-image: url(../resources/index_images/header_background/hbg_1.png);
+    }
+    20%, 30% {
+        background-image: url(../resources/index_images/header_background/hbg_2.png);
+    }
+    40%, 50% {
+        background-image: url(../resources/index_images/header_background/hbg_3.png);
+    }
+    60%, 70% {
+        background-image: url(../resources/index_images/header_background/hbg_4.png);
+    }
+    80%, 90% {
+        background-image: url(../resources/index_images/header_background/hbg_5.png);
+    }
+}
+.header_items {
+    display: grid;
+    grid-template-areas:
+    "LOGO"
+    "INFO";
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 300px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+}
+.header_items img{
+    object-fit: cover;
+}
+.logo {
+    grid-area: LOGO;
+    height: 150px;
+}    
+.lhsz_info {
+    grid-area: INFO;
+    height: 150px;
+}
+.lhsz_slogan {
+    grid-area: ANIM;
+    display: none;
+    width: 540px;
+    height: 150px;
+}
+
+/* ----------------------------- */
+/* A NAV elemeinek beállítása   */
+/* ----------------------------- */
+nav {
+    grid-area: NAV;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    width: 220px;
+    height: auto;
+    padding: 0.5rem;
+    gap: 10px;
+    z-index: 3;
+}
+nav ul.toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: normal;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    transition: all 0.5s linear;
+    cursor: pointer;
+}
+nav ul.toggle.active {
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
+}
+nav ul.toggle li {
+    list-style: none;
+    position: relative;
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+nav ul.toggle.active li:nth-of-type(1) {
+    transform: translateY(13.5px) rotate(45deg);
+}
+nav ul.toggle.active li:nth-of-type(2) {
+    opacity: 0;
+}
+nav ul.toggle.active li:nth-of-type(3) {
+    transform: translateY(-13.5px) rotate(-45deg);
+}
+nav ul.menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    list-style-type: none;
+    padding: 3px;
+    right: 120%;
+    transition: 0.8s;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+}
+nav ul.menu.active {
+    right: 0%;
+}
+nav ul.menu li {
+    list-style: none;
+    position: relative;
+    width: 200px;
+    text-align: left;
+}
+nav ul.menu li a {
+    text-decoration: none;
+    display: block;
+}
+
+
 /* ------------------------------ */
 /* Az ASIDE rész elemeinek beállítása */
 /* ------------------------------ */
@@ -376,8 +345,6 @@ aside .aside_toggle {
     width: 50px;
     background: transparent;
     backdrop-filter: blur(3px);
-/*     background-color: var(--color_main_blue); */
-/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
     transition: all 0.8s linear;
     cursor: pointer;
@@ -424,14 +391,12 @@ aside .aside_content {
     justify-content: space-evenly;
     align-items: center;
     gap: 5px;
+    overflow: hidden;
     position: relative;
-    width: auto;
     height: inherit;
     left: 130%;
     background: transparent;
     backdrop-filter: blur(3px);
-/*     background-color: var(--color_main_blue);
-    box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
     transition: all 0.8s ease;
 }
@@ -462,14 +427,122 @@ main {
 /*     display: grid;
     grid-template-columns: auto calc(100px + 2%); */
     position: relative;
-    top: -600px;
+    margin-top: -600px;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 60vh;
+    background-image: url(../resources/index_images/main_bg.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 0 20px 20px var(--color_white) inset;
 }
-main p {
-    font-size: 1rem;
+div.content {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-areas:
+        "AIRMAIL AIRMAIL"
+        "FORM FORM"
+        "MAP MAP";
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+    column-gap: 5vw;
+    min-height: 60vh;
 }
-.content {
+div.contact-img {
+    grid-area: AIRMAIL;
+    height: inherit;
+    text-align: center;
+}
+div.contact-img img {
+    object-fit: cover;
+}
+/* ----------------------------- */
+/* A FORM elemeinek beállítása   */
+/* ----------------------------- */
+div.contact {
+    grid-area: FORM;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(3px);
+}
+
+.contact h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color_font);
+    text-align: center;
+    margin: 1rem;
+}
+.contact form {
+    width: clamp(300px, 45vw, 800px);
+    text-align: center;
+}
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+}
+.input-box .input-field {
+    width: 48%;
+}
+.field .form-item {
+    width: 100%;
     padding: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color_glow_blue);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    margin-top: 11px;
+}
+.field.error .form-item {
+    border: 2px solid var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
+}
+.field .form-item::placeholder {
+    color: var(--color_font);
+}
+.field .error-txt {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--color_active_red);
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+.textarea-field .error-txt {
+    margin-top: -1px;
+}
+form .textarea-field .form-item {
+    resize: none;
+}
+form button.glowing-button {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--color_font);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.map {
+    grid-area: MAP;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.map iframe {
+    width: clamp(300px, 60vw, 800px);
 }
 
 
@@ -496,8 +569,6 @@ footer {
     padding: 5px;
     background: transparent;
     backdrop-filter: blur(3px);
-/*     background-color: var(--color_main_blue); */
-/*     box-shadow: 0 0 5px 3px var(--color_main_blue) inset; */
     border-radius: 5px;
 }
 .social_media {
@@ -506,7 +577,6 @@ footer {
     align-items: center;
     column-gap: 5px;
     width: fit-content;
-/*     background-color: var(--color_white); */
 }
 .social_media_items{
     padding: 0 10px;
@@ -547,6 +617,10 @@ footer {
     .lhsz_slogan {
         display: block;
     }
+    div.content {
+        grid-template-areas:
+        "AIRMAIL FORM"
+        "MAP MAP";
 }
 
 @media screen and (min-width: 992px) {
@@ -588,7 +662,7 @@ footer {
         left: 0;
     }
     main {
-        top: 0;
+        margin-top: 0;
     }
     footer {
         width: calc(100vw - 140px);
