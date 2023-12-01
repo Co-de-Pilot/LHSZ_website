@@ -41,6 +41,11 @@
     user-select: none;
     text-decoration: none;
 }
+textarea, input {
+    border: 0;
+    outline: 0;
+}
+
 
 
 /* ----------------------------- */
@@ -92,7 +97,7 @@ body {
     color: var(--color_glow_blue);
     text-shadow: 0 0 8px var(--color_glow_blue);
 }
-.glowing-button:active {
+.glowing-button.active {
     color: var(--color_active_red);
     text-shadow: 0 0 8px var(--color_active_red);
 }
@@ -120,7 +125,7 @@ body {
     box-shadow: 0 0 8px 2px var(--color_glow_blue);
     width: 100%;
 }
-.glowing-button:active .top-bottom::before, .glowing-button:active .top-bottom::after {
+.glowing-button.active .top-bottom::before, .glowing-button.active .top-bottom::after {
     background-color: var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
     width: 100%;
@@ -154,13 +159,14 @@ body {
 .glowing-button:hover .left-right::after {
     transition-delay: 0.8s;
 }
-.glowing-button:active .left-right::before, .glowing-button:active .left-right::after {
+.glowing-button.active .left-right::before, .glowing-button.active .left-right::after {
+    opacity: 1;
     background-color: var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
-    transition-property: background-color, box-shadow;
+/*     transition-property: background-color, box-shadow;
     transition-duration: 0.8s, 0.8s;
     transition-timing-function: ease-in-out;
-    transition-delay: 0s, 0s;
+    transition-delay: 0s, 0s; */
 }
 
 
@@ -252,7 +258,7 @@ nav {
     height: auto;
     padding: 0.5rem;
     gap: 10px;
-    z-index: 3;
+    z-index: 8;
 }
 nav ul.toggle {
     display: flex;
@@ -268,8 +274,9 @@ nav ul.toggle {
     border-radius: 5px;
     transition: all 0.5s linear;
     cursor: pointer;
+    z-index: 10;
 }
-nav ul.toggle.active {
+nav ul.toggle.menu-active {
     background-color: var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
 }
@@ -281,13 +288,13 @@ nav ul.toggle li {
     background: var(--color_font);
     transition: all 0.8s linear;
 }
-nav ul.toggle.active li:nth-of-type(1) {
+nav ul.toggle.menu-active li:nth-of-type(1) {
     transform: translateY(13.5px) rotate(45deg);
 }
-nav ul.toggle.active li:nth-of-type(2) {
+nav ul.toggle.menu-active li:nth-of-type(2) {
     opacity: 0;
 }
-nav ul.toggle.active li:nth-of-type(3) {
+nav ul.toggle.menu-active li:nth-of-type(3) {
     transform: translateY(-13.5px) rotate(-45deg);
 }
 nav ul.menu {
@@ -301,8 +308,9 @@ nav ul.menu {
     background: transparent;
     backdrop-filter: blur(3px);
     border-radius: 5px;
+    z-index: 9;
 }
-nav ul.menu.active {
+nav ul.menu.menu-active {
     right: 0%;
 }
 nav ul.menu li {
@@ -329,12 +337,12 @@ aside {
     gap: 10px;
     position: sticky;
     width: 130px;
-    height: calc(100vh - 60px);
+    height: calc(100dvh - 78px);
     overflow: hidden;
     padding: 0.5rem;
     top: 0;
     left: calc(100% - 130px);
-    z-index: 2;
+    z-index: 8;
 }
 aside .aside_toggle {
     display: flex;
@@ -348,8 +356,9 @@ aside .aside_toggle {
     border-radius: 5px;
     transition: all 0.8s linear;
     cursor: pointer;
+    z-index: 10;
 }
-aside .aside_toggle.active {
+aside .aside_toggle.aside-active {
     background-color: var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
 }
@@ -358,7 +367,7 @@ aside .aside_toggle img {
     height: 42px;
     transition: all 0.8s linear;
 }
-aside .aside_toggle.active img {
+aside .aside_toggle.aside-active img {
     opacity: 0;
 }
 aside .aside_toggle::before {
@@ -369,7 +378,7 @@ aside .aside_toggle::before {
     background: var(--color_font);
     transition: all 0.8s linear;
 }
-aside .aside_toggle.active::before {
+aside .aside_toggle.aside-active::before {
     opacity: 1;
     transform: translateY(22.5px) rotate(45deg);
 }
@@ -381,7 +390,7 @@ aside .aside_toggle::after {
     background: var(--color_font);
     transition: all 0.8s linear;
 }
-aside .aside_toggle.active::after {
+aside .aside_toggle.aside-active::after {
     opacity: 1;
     transform: translateY(-22.5px) rotate(-45deg);
 }
@@ -399,8 +408,9 @@ aside .aside_content {
     backdrop-filter: blur(3px);
     border-radius: 5px;
     transition: all 0.8s ease;
+    z-index: 8;
 }
-aside .aside_content.active {
+aside .aside_content.aside-active {
     left: 0;
 }
 aside .aside_content .aside_content_items{
@@ -419,49 +429,54 @@ aside .aside_content a {
 }
 
 
+
+
 /* ------------------------------ */
 /* A MAIN rész elemeinek beállítása */
 /* ------------------------------ */
 main {
     grid-area: MAIN;
-/*     display: grid;
+    /*     display: grid;
     grid-template-columns: auto calc(100px + 2%); */
     position: relative;
-    margin-top: -600px;
+    margin-top: -90svh;
     z-index: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 60vh;
-    background-image: url(../resources/index_images/main_bg.png);
+}
+div.index-content {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../resources/index_images/index_bg.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 0 20px 20px var(--color_white) inset;
+    
+}
+div.contact-content {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-areas:
+    "FORM FORM"
+    "MAP MAP";
+    justify-content: center;
+    align-items: center;
+    row-gap: 5vh;
+    column-gap: 5vw;
+    width: 100%;
+    height: 100%;
+    background-image: url(../resources/contact_images/contact_bg.png);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     box-shadow: 0 0 20px 20px var(--color_white) inset;
 }
-div.content {
-    display: grid;
-    grid-template-columns: 300px auto;
-    grid-template-areas:
-        "AIRMAIL AIRMAIL"
-        "FORM FORM"
-        "MAP MAP";
-    justify-content: center;
-    align-items: center;
-    row-gap: 5vh;
-    column-gap: 5vw;
-    min-height: 60vh;
-}
-div.contact-img {
-    grid-area: AIRMAIL;
-    height: inherit;
-    text-align: center;
-}
-div.contact-img img {
-    object-fit: cover;
-}
 /* ----------------------------- */
-/* A FORM elemeinek beállítása   */
+/* A MAIN/FORM elemeinek beállítása   */
 /* ----------------------------- */
 div.contact {
     grid-area: FORM;
@@ -478,18 +493,12 @@ div.contact {
     font-weight: 800;
     color: var(--color_font);
     text-align: center;
+    padding: 0 4rem;
     margin: 1rem;
 }
 .contact form {
     width: clamp(300px, 45vw, 800px);
     text-align: center;
-}
-.contact form .input-box {
-    display: flex;
-    justify-content: space-between;
-}
-.input-box .input-field {
-    width: 48%;
 }
 .field .form-item {
     width: 100%;
@@ -551,19 +560,113 @@ form button.glowing-button {
 /* ----------------------------- */
 footer {
     grid-area: FOOTER;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     padding: 0.5rem;
     position: fixed;
     bottom: 0;
 }
+/* ------------------------------ */
+/* A FOOTER/FLIGHTINFO rész elemeinek beállítása */
+/* ------------------------------ */
+div.flightinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    width: 220px;
+    padding-bottom: 1rem;
+    z-index: 8;
+}
+.flightinfo .flightinfo-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    color: var(--color_font);
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    transition: all 0.8s linear;
+    cursor: pointer;
+    z-index: 10;
+}
+.flightinfo .flightinfo-toggle.flightinfo-active {
+    background-color: var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
+}
+.flightinfo .flightinfo-toggle img {
+    width: 42px;
+    height: 42px;
+    transition: all 0.8s linear;
+}
+.flightinfo .flightinfo-toggle.flightinfo-active img {
+    opacity: 0;
+}
+.flightinfo .flightinfo-toggle::before {
+    opacity: 0;
+    content: "";
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+.flightinfo .flightinfo-toggle.flightinfo-active::before {
+    opacity: 1;
+    transform: translateY(22.5px) rotate(45deg);
+}
+.flightinfo .flightinfo-toggle::after {
+    opacity: 0;
+    content: "";
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+.flightinfo .flightinfo-toggle.flightinfo-active::after {
+    opacity: 1;
+    transform: translateY(-22.5px) rotate(-45deg);
+}
+.flightinfo ul.flightinfo-menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    list-style-type: none;
+    padding: 3px;
+    right: 120%;
+    transition: 0.8s;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    z-index: 8;
+}
+.flightinfo ul.flightinfo-menu.flightinfo-active {
+    right: 0%;
+}
+.flightinfo ul.flightinfo-menu li {
+    list-style: none;
+    position: relative;
+    width: 200px;
+    text-align: left;
+}
+.flightinfo ul.flightinfo-menu li a {
+    text-decoration: none;
+    display: block;
+}
+
 .footer_items {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     row-gap: 10px;
-    column-gap: 2%;
+    column-gap: 1%;
+    width: 100%;
     min-width: 330px;
     z-index: 1;
     padding: 5px;
@@ -600,7 +703,7 @@ footer {
 }
 .copyright p, .icons8 p{
     padding: 2px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 
@@ -617,10 +720,17 @@ footer {
     .lhsz_slogan {
         display: block;
     }
-    div.content {
+    div.contact-content {
         grid-template-areas:
-        "AIRMAIL FORM"
+        "FORM FORM"
         "MAP MAP";
+    }
+    .contact form .input-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    .input-box .input-field {
+        width: 48%;
     }
 }
 
@@ -664,6 +774,7 @@ footer {
     }
     main {
         margin-top: 0;
+        width: calc(100vw - 150px);
     }
     footer {
         width: calc(100vw - 140px);

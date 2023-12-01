@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+@property --color_font {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgba(80,0,0, 0.8);
+}
+
+
+/* ----------------------------- */
+/* A RESET beállítása            */
+/* ----------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+}
+
+
+/* ----------------------------- */
+/* A HTML elemeinek beállítása   */
+/* ----------------------------- */
+html {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    color: var(--color_font);
+}
+body {
+    min-width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../resources/contact_images/contact_bg.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.thx-message {
+    background: transparent;
+    backdrop-filter: blur(3px);
+    padding: 2rem;
+}
+.thx-message h2 {
+    font-size: 3.3rem;
+    text-align: center;
+    padding: 1rem;
+}
+.thx-message p {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+}
+.thx-message a {
+    font-size: 1.5rem;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+}
