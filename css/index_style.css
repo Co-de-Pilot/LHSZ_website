@@ -58,11 +58,13 @@ html {
 body {
     min-width: 330px;
     display: grid;
+    grid-template-columns: auto 66px;
     grid-template-areas:
     "HEADER HEADER"
     "NAV ASIDE"
     "MAIN MAIN"
     "FOOTER FOOTER";
+    overflow-x: hidden;
 }
 
 
@@ -163,10 +165,6 @@ body {
     opacity: 1;
     background-color: var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
-/*     transition-property: background-color, box-shadow;
-    transition-duration: 0.8s, 0.8s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s, 0s; */
 }
 
 
@@ -253,11 +251,9 @@ nav {
     justify-content: center;
     align-items: flex-start;
     position: sticky;
-    top: 0;
-    width: 220px;
-    height: auto;
+    top: 1svh;
+    width: 66px;
     padding: 0.5rem;
-    gap: 10px;
     z-index: 8;
 }
 nav ul.toggle {
@@ -300,18 +296,18 @@ nav ul.toggle.menu-active li:nth-of-type(3) {
 nav ul.menu {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
+    top: 72px;
+    translate: -110%;
     list-style-type: none;
     padding: 3px;
-    right: 120%;
     transition: 0.8s;
     background: transparent;
     backdrop-filter: blur(3px);
     border-radius: 5px;
-    z-index: 9;
 }
 nav ul.menu.menu-active {
-    right: 0%;
+    translate: 0;
 }
 nav ul.menu li {
     list-style: none;
@@ -336,12 +332,12 @@ aside {
     align-items: flex-end;
     gap: 10px;
     position: sticky;
-    width: 130px;
-    height: calc(100dvh - 78px);
-    overflow: hidden;
+    width: 66px;
+    /* height: calc(100dvh - 78px); */
+    /* overflow: hidden; */
     padding: 0.5rem;
-    top: 0;
-    left: calc(100% - 130px);
+    top: 1svh;
+    left: calc(100% - 66px);
     z-index: 8;
 }
 aside .aside_toggle {
@@ -401,9 +397,9 @@ aside .aside_content {
     align-items: center;
     gap: 5px;
     overflow: hidden;
-    position: relative;
-    height: inherit;
-    left: 130%;
+    position: absolute;
+    top: 72px;
+    translate: 120%;
     background: transparent;
     backdrop-filter: blur(3px);
     border-radius: 5px;
@@ -411,13 +407,14 @@ aside .aside_content {
     z-index: 8;
 }
 aside .aside_content.aside-active {
-    left: 0;
+    translate: 0;
 }
 aside .aside_content .aside_content_items{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 110px;
+    padding: 5px;
 }
 aside img {
     object-fit: cover;
@@ -439,7 +436,7 @@ main {
     /*     display: grid;
     grid-template-columns: auto calc(100px + 2%); */
     position: relative;
-    margin-top: -90svh;
+    /* margin-top: -90svh; */
     z-index: 0;
     display: flex;
     justify-content: center;
@@ -548,7 +545,7 @@ form button.glowing-button {
 .map {
     grid-area: MAP;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 25svh;
 }
 .map iframe {
     width: clamp(300px, 60vw, 800px);
@@ -572,13 +569,15 @@ footer {
 /* A FOOTER/FLIGHTINFO rész elemeinek beállítása */
 /* ------------------------------ */
 div.flightinfo {
-    display: flex;
+/*     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
-    width: 220px;
-    padding-bottom: 1rem;
+    align-items: flex-start; */
+    position: absolute;
+    top: -8svh;
+/*     gap: 10px; */
+/*     width: 220px; */
+/*     padding-bottom: 1rem; */
     z-index: 8;
 }
 .flightinfo .flightinfo-toggle {
@@ -586,6 +585,7 @@ div.flightinfo {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
     height: 50px;
     width: 50px;
     color: var(--color_font);
@@ -635,10 +635,11 @@ div.flightinfo {
 .flightinfo ul.flightinfo-menu {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: absolute;
+    top: -18svh;
     list-style-type: none;
     padding: 3px;
-    right: 120%;
+    translate: -110%;
     transition: 0.8s;
     background: transparent;
     backdrop-filter: blur(3px);
@@ -646,7 +647,7 @@ div.flightinfo {
     z-index: 8;
 }
 .flightinfo ul.flightinfo-menu.flightinfo-active {
-    right: 0%;
+    translate: 0;
 }
 .flightinfo ul.flightinfo-menu li {
     list-style: none;
@@ -690,8 +691,8 @@ div.flightinfo {
     transition: all 0.3s linear;
 }
 .social_media_items img:hover {
-    background-color: var(--color_white);
-    box-shadow: 0 0 5px 5px var(--color_white);
+    background-color: var(--color_glow_blue);
+    box-shadow: 0 0 5px 5px var(--color_glow_blue);
 }
 .icons8, .copyright {
     position: relative;
@@ -704,6 +705,7 @@ div.flightinfo {
 .copyright p, .icons8 p{
     padding: 2px;
     font-size: 0.75rem;
+    color: var(--color_font);
 }
 
 
@@ -756,21 +758,23 @@ div.flightinfo {
     nav ul.menu {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        justify-content: space-evenly;
-        right: 0;
+        position: static;
+        translate: 0;
     }
     nav ul.menu li {
         display: inline;
         width: auto;
     }
     aside {
-        top: 60px;
+        top: 72px;
     }
     aside .aside_toggle {
         display: none;
     }
     aside .aside_content {
-        left: 0;
+        position: sticky;
+        translate: 0;
+        height: calc(100vh - 80px);
     }
     main {
         margin-top: 0;
