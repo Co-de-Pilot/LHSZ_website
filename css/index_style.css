@@ -335,6 +335,8 @@ aside {
     width: 66px;
     /* height: calc(100dvh - 78px); */
     /* overflow: hidden; */
+/*     overflow-x: hidden;
+    overflow-y: visible; */
     padding: 0.5rem;
     top: 1svh;
     left: calc(100% - 66px);
@@ -409,6 +411,9 @@ aside .aside_content {
 aside .aside_content.aside-active {
     translate: 0;
 }
+/* .aside_content.aside-active aside {
+    overflow-x: hidden;
+} */
 aside .aside_content .aside_content_items{
     display: flex;
     flex-direction: column;
@@ -507,14 +512,14 @@ div.contact {
     font-size: 0.8rem;
     margin-top: 11px;
 }
-.field.error .form-item {
+.field.blank .form-item, .field.error .form-item {
     border: 2px solid var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
 }
 .field .form-item::placeholder {
     color: var(--color_font);
 }
-.field .error-txt {
+.field .blank-txt, .field .error-txt {
     display: none;
     font-size: 0.8rem;
     color: var(--color_active_red);
@@ -522,7 +527,13 @@ div.contact {
     margin-top: 3px;
     margin-bottom: 8px;
 }
-.textarea-field .error-txt {
+.field.blank .blank-txt {
+    display: block;
+}
+.field.error .error-txt {
+    display: block;
+}
+.textarea-field .blank-txt {
     margin-top: -1px;
 }
 form .textarea-field .form-item {

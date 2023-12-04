@@ -87,8 +87,8 @@
         <div class="contact-content">
             <div class="contact">
                 <h2>Lépj velünk kapcsolatba!</h2>
-<!--                 <form action="https://formsubmit.co/d5488e2563a424f08f6ece3333ff93b7" method="POST"> -->
-                <form>
+                <form action="https://formsubmit.co/d5488e2563a424f08f6ece3333ff93b7" method="POST" class="contact-form">
+<!--                 <form action="#"> -->
                     <input type="hidden" name="_captcha" value="false"/>
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_subject" value="Új Üzenet a LHSZ.HU-nak!!!"/>
@@ -98,31 +98,32 @@
                         <div class="input-field field">
                             <input type="text" placeholder="Teljes Név" id="name"
                              class="form-item box-shadow_glblue" name="Teljes&nbsp;Név" autocomplete="off"/>
-                            <div class="error-txt">Kérlek, töltsd ki a Teljes Név mezőt!</div>
+                            <div class="blank-txt">Kérlek, töltsd ki a Teljes Név mezőt!</div>
                         </div>
                         <div class="input-field field">
                             <input type="email" placeholder="Email-cím" id="email"
                              class="form-item box-shadow_glblue" name="Email-cím" autocomplete="off"/>
-                            <div class="error-txt">Kérlek, töltsd ki az Email-cím mezőt!</div>
+                            <div class="blank-txt">Kérlek, töltsd ki az Email-cím mezőt!</div>
+                            <div class="error-txt">Kérlek, adj meg egy helyes Email-címet!</div>
                         </div>
                     </div>
                     <div class="input-box">
                         <div class="input-field field">
                             <input type="tel" placeholder="Telefonszám" id="phone-number"
-                             class="form-item box-shadow_glblue" name="Telefonszám" autocomplete="off"/>
-                            <div class="error-txt">Kérlek, töltsd ki a Telefonszám mezőt!</div>
-        
+                            class="form-item box-shadow_glblue" name="Telefonszám" autocomplete="off"/>
+                            <div class="blank-txt">Kérlek, töltsd ki a Telefonszám mezőt!</div>
+                            <div class="error-txt">Kérlek, adj meg egy helyes Telefonszámot!</div>
                         </div>
                         <div class="input-field field">
                             <input type="text" placeholder="Üzenet tárgya" id="subject"
                              class="form-item box-shadow_glblue" name="Üzenet&nbsp;tárgya" autocomplete="off"/>
-                            <div class="error-txt">Kérlek, töltsd ki az Üzenet tárgya mezőt!</div>
+                            <div class="blank-txt">Kérlek, töltsd ki az Üzenet tárgya mezőt!</div>
                         </div>
                     </div>
                     <div class="textarea-field field">
                         <textarea class="form-item box-shadow_glblue" name="Üzenet&nbsp;szövege" id="message" cols="30" rows="10"
                          autocomplete="off" placeholder="Ide írd az üzeneted..."></textarea>
-                        <div class="error-txt">Kérlek, töltsd ki a Üzenet szövege mezőt!</div>
+                        <div class="blank-txt">Kérlek, töltsd ki a Üzenet szövege mezőt!</div>
                     </div>
                     <button type="submit" class="glowing-button"><span class="button-text">Üzenet küldése</span>
                         <span class="top-bottom"></span><span class="left-right"></span></button>
