@@ -67,8 +67,8 @@ body {
 /*     overflow: hidden scroll; */
 }
 body, html {
-    overflow-x: hidden;
     position: relative;
+    overflow-x: clip;
 }
 
 
