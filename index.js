@@ -84,6 +84,7 @@ submitButton.addEventListener('click', (event) => {
     }
     if (correctFormInput) {
         form.submit();
+        form.reset();
     }
 })
 
