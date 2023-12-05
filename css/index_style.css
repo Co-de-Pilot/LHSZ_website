@@ -490,7 +490,7 @@ div.contact {
     backdrop-filter: blur(3px);
 }
 
-.contact h2 {
+div.contact h2 {
     font-size: 1.8rem;
     font-weight: 800;
     color: var(--color_font);
@@ -498,11 +498,12 @@ div.contact {
     padding: 0 4rem;
     margin: 1rem;
 }
-.contact form {
+div.contact form {
     width: clamp(300px, 45vw, 800px);
     text-align: center;
 }
-.field .form-item {
+form div.field input.form-item,
+form div.field textarea.form-item {
     width: 100%;
     padding: 0.5rem;
     background: transparent;
@@ -512,16 +513,17 @@ div.contact {
     font-size: 0.8rem;
     margin-top: 11px;
 }
-.field.blank.form-item,
-.field.error.form-item {
+form div.field input.form-item.blank,
+form div.field input.form-item.error,
+form div.field textarea.form-item.blank {
     border: 2px solid var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
 }
-.field .form-item::placeholder {
+form div.field .form-item::placeholder {
     color: var(--color_font);
 }
-.field.blank-txt,
-.field.error-txt {
+form div.field div.blank-txt,
+form div.field div.error-txt {
     display: none;
     font-size: 0.8rem;
     color: var(--color_active_red);
@@ -529,16 +531,16 @@ div.contact {
     margin-top: 3px;
     margin-bottom: 8px;
 }
-.field.blank .blank-txt {
+form div.field.blank .blank-txt {
     display: block;
 }
-.field.error .error-txt {
+form div.field.error .error-txt {
     display: block;
 }
-.textarea-field .blank-txt {
+form div.textarea-field .blank-txt {
     margin-top: -1px;
 }
-form .textarea-field .form-item {
+form div.textarea-field .form-item {
     resize: none;
 }
 form button.glowing-button {
