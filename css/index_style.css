@@ -512,14 +512,16 @@ div.contact {
     font-size: 0.8rem;
     margin-top: 11px;
 }
-.field.blank .form-item, .field.error .form-item {
+.field.blank.form-item,
+.field.error.form-item {
     border: 2px solid var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
 }
 .field .form-item::placeholder {
     color: var(--color_font);
 }
-.field .blank-txt, .field .error-txt {
+.field.blank-txt,
+.field.error-txt {
     display: none;
     font-size: 0.8rem;
     color: var(--color_active_red);
