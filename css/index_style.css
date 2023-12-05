@@ -64,7 +64,11 @@ body {
     "NAV ASIDE"
     "MAIN MAIN"
     "FOOTER FOOTER";
-    overflow: hidden scroll;
+/*     overflow: hidden scroll; */
+}
+body, html {
+    overflow-x: hidden;
+    position: relative;
 }
 
 
