@@ -55,7 +55,7 @@ html {
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
 }
-body {
+.body-wrapper {
     min-width: 330px;
     display: grid;
     grid-template-columns: auto 66px;
@@ -64,11 +64,8 @@ body {
     "NAV ASIDE"
     "MAIN MAIN"
     "FOOTER FOOTER";
-/*     overflow: hidden scroll; */
-}
-body, html {
-    position: relative;
     overflow-x: clip;
+/*     overflow: hidden scroll; */
 }
 
 
@@ -255,7 +252,7 @@ nav {
     justify-content: center;
     align-items: flex-start;
     position: sticky;
-    top: 1svh;
+    top: 1vh;
     width: 66px;
     padding: 0.5rem;
     z-index: 8;
@@ -342,7 +339,7 @@ aside {
 /*     overflow-x: hidden;
     overflow-y: visible; */
     padding: 0.5rem;
-    top: 1svh;
+    top: 1vh;
     left: calc(100% - 66px);
     z-index: 8;
 }
@@ -593,7 +590,7 @@ div.flightinfo {
     justify-content: flex-start;
     align-items: flex-start; */
     position: absolute;
-    top: -8svh;
+    top: -8vh;
 /*     gap: 10px; */
 /*     width: 220px; */
 /*     padding-bottom: 1rem; */
@@ -756,7 +753,7 @@ div.flightinfo {
 }
 
 @media screen and (min-width: 992px) {
-    body {
+    .body-wrapper {
         grid-template-areas:
         "HEADER HEADER"
         "NAV NAV"
