@@ -43,30 +43,7 @@ flightinfoToggle.addEventListener('click', () => {
     }
 })
 
-
-
-/* const form = document.querySelector('form');
-const fullName = document.querySelector('name');
-const phonenumber = document.querySelector('phone-number');
-const subject = document.querySelector('subject');
-const message = document.querySelector('message'); */
-
-/* function sendEmail() {
-    const bodyMessage = 'Név: ${fullName.value}<br> Email-cím: ${email.value}<br> Telefonszám: ${phonenumber.value}<br> Üzenet szövege: ${message.value}';
-    
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "piratosnogi@gmail.com",
-        Password : "8C30EE9D006DAEB47AEE27B09F52AD9EBFAA",
-        To : 'piratosnogi@gmail.com',
-        From : "piratosnogi@gmail.com",
-        Subject : subject.value,
-        Body : bodyMessage
-    }).then(
-        message => alert(message)
-        );
-    } */
-    
+/* CONTACT FORM vezérlése */
 const submitButton = document.querySelector('form button.glowing-button');
 const email = document.querySelector('.field #email');
 const phoneNumber = document.querySelector('.field #phone-number');
@@ -87,7 +64,6 @@ submitButton.addEventListener('click', (event) => {
         form.reset();
     }
 })
-
 
 function checkInputs() {
     
@@ -135,7 +111,6 @@ function checkEmail() {
 }
 
 function checkPhoneNumber() {
-/*     const phoneNumberRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/; */
     const phoneNumberRegex = /^\+(?:[0-9]●?){6,14}[0-9]$/;
     
     if (!phoneNumber.value.match(phoneNumberRegex)) {
@@ -147,9 +122,51 @@ function checkPhoneNumber() {
     }
 }
 
-/* form.addEventListener('submit', (e) => {
-    e.preventDefault;
-    checkInputs();
+/* INDEX CAROUSEL vezérlése */
+let nextArrow = document.querySelector('.carousel-next-arrow');
+let prevArrow = document.querySelector('.carousel-prev-arrow');
+let mainCarousel = document.querySelector('.main-carousel');
+let mainCarouselList = document.querySelector('.main-carousel .carousel-list');
+let mainCarouselThumbnail = document.querySelector('.main-carousel .carousel-thumbnail');
 
-    sendEmail;
-}) */
+nextArrow.onclick = function() {
+    showSlider('next');
+}
+
+prevArrow.onclick = function() {
+    showSlider('prev');
+}
+
+let timeRunning = 2200;
+let timeAutoNext = 8000;
+let runTimeOut;
+let runAutoRun = setTimeout(() => {
+    nextArrow.click();
+}, timeAutoNext);
+
+function showSlider(type) {
+    let itemSlider = document.querySelectorAll('.main-carousel .carousel-list .carousel-item');
+    let itemThumbnail = document.querySelectorAll('.main-carousel .carousel-thumbnail .carousel-thumbnail-item');
+
+    if (type === 'next') {
+        mainCarouselList.appendChild(itemSlider[0]);
+        mainCarouselThumbnail.appendChild(itemThumbnail[0]);
+        mainCarousel.classList.add('next');
+    } else {
+        let positionLastItem = itemSlider.length - 1;
+        mainCarouselList.prepend(itemSlider[positionLastItem]);
+        mainCarouselThumbnail.prepend(itemThumbnail[positionLastItem]);
+        mainCarousel.classList.add('prev');
+    }
+    
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        mainCarousel.classList.remove('next');
+        mainCarousel.classList.remove('prev');
+    }, timeRunning);
+
+    clearTimeout(runAutoRun);
+    runAutoRun = setTimeout(() => {
+        nextArrow.click();
+    }, timeAutoNext);
+}

@@ -54,6 +54,9 @@ textarea, input {
 html {
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
+    color: var(--color_font);
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 .body-wrapper {
     min-width: 330px;
@@ -65,7 +68,6 @@ html {
     "MAIN MAIN"
     "FOOTER FOOTER";
     overflow-x: clip;
-/*     overflow: hidden scroll; */
 }
 
 
@@ -257,7 +259,7 @@ nav {
     padding: 0.5rem;
     z-index: 8;
 }
-nav ul.toggle {
+nav .toggle {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -273,11 +275,14 @@ nav ul.toggle {
     cursor: pointer;
     z-index: 10;
 }
-nav ul.toggle.menu-active {
+nav .toggle .sr-only {
+    display: none;
+}
+nav .toggle.menu-active {
     background-color: var(--color_active_red);
     box-shadow: 0 0 8px 2px var(--color_active_red);
 }
-nav ul.toggle li {
+nav .toggle li {
     list-style: none;
     position: relative;
     width: 80%;
@@ -285,16 +290,16 @@ nav ul.toggle li {
     background: var(--color_font);
     transition: all 0.8s linear;
 }
-nav ul.toggle.menu-active li:nth-of-type(1) {
+nav .toggle.menu-active li:nth-of-type(1) {
     transform: translateY(13.5px) rotate(45deg);
 }
-nav ul.toggle.menu-active li:nth-of-type(2) {
+nav .toggle.menu-active li:nth-of-type(2) {
     opacity: 0;
 }
-nav ul.toggle.menu-active li:nth-of-type(3) {
+nav .toggle.menu-active li:nth-of-type(3) {
     transform: translateY(-13.5px) rotate(-45deg);
 }
-nav ul.menu {
+nav .menu {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -307,16 +312,16 @@ nav ul.menu {
     backdrop-filter: blur(3px);
     border-radius: 5px;
 }
-nav ul.menu.menu-active {
+nav .menu.menu-active {
     translate: 0;
 }
-nav ul.menu li {
+nav .menu li {
     list-style: none;
     position: relative;
     width: 200px;
     text-align: left;
 }
-nav ul.menu li a {
+nav .menu li a {
     text-decoration: none;
     display: block;
 }
@@ -334,10 +339,6 @@ aside {
     gap: 10px;
     position: sticky;
     width: 66px;
-    /* height: calc(100dvh - 78px); */
-    /* overflow: hidden; */
-/*     overflow-x: hidden;
-    overflow-y: visible; */
     padding: 0.5rem;
     top: 1vh;
     left: calc(100% - 66px);
@@ -412,9 +413,6 @@ aside .aside_content {
 aside .aside_content.aside-active {
     translate: 0;
 }
-/* .aside_content.aside-active aside {
-    overflow-x: hidden;
-} */
 aside .aside_content .aside_content_items{
     display: flex;
     flex-direction: column;
@@ -439,29 +437,59 @@ aside .aside_content a {
 /* ------------------------------ */
 main {
     grid-area: MAIN;
-    /*     display: grid;
-    grid-template-columns: auto calc(100px + 2%); */
     position: relative;
-    /* margin-top: -90svh; */
     z-index: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 60vh;
 }
-div.index-content {
-    display: block;
-    width: 100%;
-    height: 100%;
+main .index-content {
+    grid-area: INDEX;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
     background-image: url(../resources/index_images/index_bg.png);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     box-shadow: 0 0 20px 20px var(--color_white) inset;
-    
 }
-div.contact-content {
-    display: grid;
+main .index-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.1rem 0;
+}
+main .index-content .news {
+    width: 80%;
+    margin: 3rem;
+}
+main .index-content .news .news-headline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .index-content .news h3,
+main .index-content .news h4 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.1rem 0;
+}
+main .index-content .news h4 {
+    font-size: 1.3rem;
+}
+main .index-content .news p {
+    margin: 1.1rem 0;
+}
+main .index-content .news ul {
+    margin: 0 1.1rem;
+}
+main .contact-content {
+    grid-area: CONTACT;
+    display: none;
+/*     display: grid;
     grid-template-columns: 300px auto;
     grid-template-areas:
     "FORM FORM"
@@ -469,9 +497,9 @@ div.contact-content {
     justify-content: center;
     align-items: center;
     row-gap: 5vh;
-    column-gap: 5vw;
-    width: 100%;
-    height: 100%;
+    column-gap: 5vw; */
+/*     width: 100%;
+    height: 100%; */
     background-image: url(../resources/contact_images/contact_bg.png);
     background-position: center center;
     background-attachment: fixed;
