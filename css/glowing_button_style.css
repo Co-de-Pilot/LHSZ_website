@@ -1,0 +1,110 @@
+.glowing-button {
+    position: relative;
+    color: var(--color-font);
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    font-weight: 700;
+    padding: 8px;
+    margin: 1px;
+    background: transparent;
+    transition: all 0.8s linear;
+}
+.glowing-button .button-text {
+    position: relative;
+    z-index: 1;
+}
+.glowing-button.actual {
+    color: var(--color-active-red);
+    text-shadow: 0 0 8px var(--color-active-red);
+}
+.glowing-button .top-bottom,
+.glowing-button .left-right {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+.glowing-button .top-bottom::before,
+.glowing-button .top-bottom::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    background-color: var(--color-glow-blue);
+    transition: all 0.8s ease-in-out;
+}
+.glowing-button .top-bottom::before {
+    top: 0;
+}
+.glowing-button .top-bottom::after {
+    bottom: 0;
+}
+.glowing-button.actual .top-bottom::before,
+.glowing-button.actual .top-bottom::after {
+    background-color: var(--color-active-red);
+    box-shadow: 0 0 8px 2px var(--color-active-red);
+    width: 100%;
+}
+.glowing-button .left-right::before,
+.glowing-button .left-right::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    top: 0;
+    opacity: 0;
+    background-color: var(--color-glow-blue);
+}
+.glowing-button .left-right::before {
+    transition-property: opacity, box-shadow;
+    transition-duration: 0s, 0.8s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.8s, 0s;
+    left: 0;
+}
+.glowing-button .left-right::after {
+    right: 0;
+}
+.glowing-button.actual .left-right::before,
+.glowing-button.actual .left-right::after {
+    opacity: 1;
+    background-color: var(--color-active-red);
+    box-shadow: 0 0 8px 2px var(--color-active-red);
+}
+@media (hover) {
+    .glowing-button:hover {
+        color: var(--color-glow-blue);
+        text-shadow: 0 0 8px var(--color-glow-blue);
+    }
+    .glowing-button.actual:hover {
+        color: var(--color-active-red);
+        text-shadow: 0 0 8px var(--color-active-red);
+    }
+    .glowing-button:hover .top-bottom::before,
+    .glowing-button:hover .top-bottom::after {
+        box-shadow: 0 0 8px 2px var(--color-glow-blue);
+        width: 100%;
+    }
+    .glowing-button.actual:hover .top-bottom::before,
+    .glowing-button.actual:hover .top-bottom::after {
+        box-shadow: 0 0 8px 2px var(--color-active-red);
+        width: 100%;
+    }
+    .glowing-button:hover .left-right::before,
+    .glowing-button:hover .left-right::after {
+        box-shadow: 0 0 8px 2px var(--color-glow-blue);
+        opacity: 1;
+    }
+    .glowing-button.actual:hover .left-right::before,
+    .glowing-button.actual:hover .left-right::after {
+        box-shadow: 0 0 8px 2px var(--color-active-red);
+        opacity: 1;
+    }
+    .glowing-button:hover .left-right::before {
+        transition-delay: 0s, 0s;
+    }
+    .glowing-button:hover .left-right::after {
+        transition-delay: 0.8s;
+    }
+    
+}

@@ -6,7 +6,9 @@
     <title>LHSZ.HU - A Szentesi Repülőklub hivatalos oldala</title>
     <link rel="stylesheet" href="./css/index_style.css">
     <link rel="stylesheet" href="./css/carousel_style.css">
-    <link rel="stylesheet" href="./css/co_de_pilot_logo_style.css">
+    <link rel="stylesheet" href="./css/codepilot_logo_style.css">
+    <link rel="stylesheet" href="./css/glowing_button_style.css">
+    <link rel="stylesheet" href="./css/slideshow_style.css">
     <script type="text/javascript"
      src="https://platform-api.sharethis.com/js/sharethis.js#property=657e1f457ff7d60012c384a2&product=inline-share-buttons&source=platform"
       async="async"></script>
@@ -14,49 +16,49 @@
 <body>
     <div class="body-wrapper">
         <header>
-            <div class="header_items box-shadow_glblue">
-                <div class="logo box-shadow_white opacity_60">
+            <div class="header_items design-glblue">
+                <div class="logo box-shadow-white opacity_60">
                     <img src="./resources/index_images/logo_2.jpg"
                      alt="A Szentesi Repülőklub logója">
                 </div>
-                <div class="lhsz_info box-shadow_white opacity_60">
+                <div class="lhsz_info box-shadow-white opacity_60">
                     <img src="./resources/index_images/lhsz_info_img.png"
                      alt="A Szentesi Repülőtér legfontosabb adatai">
                 </div>
-                <div class="lhsz_slogan box-shadow_white opacity_60">
+                <div class="lhsz_slogan box-shadow-white opacity_60">
                     <img src="./resources/index_images/lhsz_slogan.png"
                      alt="A Szentesi Repülőtér legfontosabb adatai">
                 </div>
             </div>
         </header>
         <nav>
-            <ul class="toggle box-shadow_glblue"><span class="sr-only">Menü</span>
+            <ul class="toggle design-glblue"><span class="sr-only">Menü</span>
                 <li></li>
                 <li></li>
                 <li></li>
             </ul>
-            <ul class="menu box-shadow_glblue">
-                <li><a class="glowing-button active" href="./index.html"><span class="button-text">Főoldal</span>
+            <ul class="menu design-glblue">
+                <li><a class="glowing-button actual" data-text="index-content" href="#"><span class="button-text">Főoldal</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
-                <li><a class="glowing-button" href="#"><span class="button-text">Rólunk</span>
+                <li><a class="glowing-button" data-text="about-content" href="#"><span class="button-text">Rólunk</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
-                <li><a class="glowing-button" href="#"><span class="button-text">Tagoknak</span>
+                <li><a class="glowing-button" data-text="members-content" href="#"><span class="button-text">Tagoknak</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
-                <li><a class="glowing-button" href="#"><span class="button-text">Rendezvények</span>
+                <li><a class="glowing-button" data-text="events-content" href="#"><span class="button-text">Rendezvények</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
-                <li><a class="glowing-button" href="#"><span class="button-text">Szolgáltatások</span>
+                <li><a class="glowing-button" data-text="services-content" href="#"><span class="button-text">Szolgáltatások</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
-                <li><a class="glowing-button" href="#"><span class="button-text">Dokumentumok</span>
+                <li><a class="glowing-button" data-text="documents-content" href="#"><span class="button-text">Dokumentumok</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
-                <li><a class="glowing-button" href="#"><span class="button-text">Kapcsolat</span>
+                <li><a class="glowing-button" data-text="contact-content" href="#"><span class="button-text">Kapcsolat</span>
                     <span class="top-bottom"></span><span class="left-right"></span></a></li>
             </ul>
         </nav>
         <aside>
-            <div class="aside_toggle box-shadow_glblue">
+            <div class="aside_toggle design-glblue">
                 <img src="https://img.icons8.com/ios-filled/50/800000/collaborating-in-circle.png" alt="Partnereink"/>
             </div>
-            <div class="aside_content box-shadow_glblue">
+            <div class="aside_content design-glblue">
                 <div class="szentes aside_content_items">
                     <a href="https://www.szentes.hu/" target="_blank">
                         <img src="./resources/index_images/aside_logos/szentes.png"
@@ -88,7 +90,8 @@
             </div>
         </aside>
         <main>
-            <div class="index-content">
+<!--             FŐOLDAL -->
+            <section class="index-content actualsection">
                 <h2>Hírek, Aktualitások</h2>
                 <div class="main-carousel">
                     <div class="carousel-list">
@@ -257,13 +260,237 @@
                     </p>
                     <div class="sharethis-inline-share-buttons"></div>
                 </div>
+            </section>
+<!--             RÓLUNK -->
+            <section class="about-content">
+                <h2>A szentesi repülésről</h2>
+                <article>
+                    <h3>A Szentesi Repülőklub</h3>
+                    <p>A régmúltban gyökerező, nagy hagyományokon alapuló szentesi
+                        repülés hosszú kényszerszünet után, 1990-ben szerveződött újjá.
+                        A Szentesi Repülőklubot életre hívó lelkes alapítókat az a
+                        nemes cél vezette, hogy a térségben újra megteremtsék a
+                        sportrepülés lehetőségét. Áldozatos, társadalmi összefogással
+                        segített munkájukra az 1993. június 19-én szervezett
+                        nagyszabású repülőnap és hangáravató tette fel a koronát.
+                    </p>
+                    <p>Ezen jeles dátumtól a mai napig a sportrepülés
+                        folyamatosan és egyre aktívabban van jelen Szentesen.
+                        Tagjaink hitvallása, hogy minél több emberrel,
+                        minél több fiatallal ismertessük és szeretessük meg
+                        a számunkra legkivételesebb élményt, a repülést.
+                    </p>
+                    <p>A szentesi repülés kezdeti korszakáról és a Szentesi
+                        Repülőklub megalakulása előtti időszakról bővebben
+                        az alábbi linken olvashatsz:</p>
+                    <a class="glowing-button" href="https://www.szentesinfo.hu/mozaik/2005/exkluziv/szentesi-repules.htm" target="_blank">
+                        Pusztai János: A szentesi repülés rövid története</a>
+                </article>
+                <article>
+                    <h3>A Szentesi Repülőklub szervezete</h3>
+                    <p>A repülőklub legfőbb döntéshozó szerve a Közgyűlés.
+                        A Közgyűlésben az egyesület minden tagja szavazati
+                        joggal bír. A Közgyűlést az egyesület elnöke hívja
+                        össze.</p>
+                    <p>A repülőklub ügyvezető szerve az Elnökség. Az egyesület
+                        alapszabálya és a Közgyűlés határozatai által
+                        megszabott keretszabályok betartásával az Elnökség
+                        irányítja az egyesület tevékenységét. Az Elnökséget
+                        a Közgyűlés választja az egyesület tagjaiból.</p>
+                    <p>Az Elnökséget jelenleg az alábbi öt fő alkotja:</p>
+                    <ul>
+                        <li>Elnök: Szőke Tibor</li>
+                        <li>Titkár: Oswald András</li>
+                        <li>Elnökségi tag: Vigh Mátyás</li>
+                        <li>Elnökségi tag: Bélteki Ferenc</li>
+                        <li>Elnökségi tag: Vecsei Balázs</li>
+                    </ul>
+                    <p>A repülőklub keretében a következő szakosztályok működnek:</p>
+                    <ul>
+                        <li>Vitorlázórepülő szakosztály</li>
+                        <li>Motoros-vitorlázórepülő szakosztály</li>
+                        <li>Sárkányrepülő szakosztály</li>
+                        <li>Modellező szakosztály</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>A szentesi repülőtér</h3>
+                    <p>A szentesi repülőtér Szentes városától délre 5 kilométerre,
+                        közvetlenül a Szentest Hódmezővásárhellyel összekötő 45-ös
+                        főút mellet fekszik. Kedvező elhelyezkedése következtében
+                        könnyen megközelíthető.
+                    </p>
+                    <p>A repülőtér főbb adatai az alábbiak:
+                    </p>
+                    <table class="design-glblue">
+                        <tr>
+                            <td>Név</td>
+                            <td>Szentesi repülőtér</td>
+                        </tr>
+                        <tr>
+                            <td>ICAO kód</td>
+                            <td>LHSZ</td>
+                        </tr>
+                        <tr>
+                            <td>Kategória</td>
+                            <td>Nem nyilvános repülőtér</td>
+                        </tr>
+                        <tr>
+                            <td>Koordináták</td>
+                            <td>N463642 E201659</td>
+                        </tr>
+                        <tr>
+                            <td>Tengerszint feletti magasság</td>
+                            <td>84 m</td>
+                        </tr>
+                        <tr>
+                            <td>Rádió hívójel</td>
+                            <td>Szentes Info</td>
+                        </tr>
+                        <tr>
+                            <td>Rádiófrekvencia</td>
+                            <td>123.81 MHz</td>
+                        </tr>
+                        <tr>
+                            <td>Pályairány</td>
+                            <td>15 dél-délkelet/33 észak-északnyugat</td>
+                        </tr>
+                        <tr>
+                            <td>Pálya hossza</td>
+                            <td>750 m</td>
+                        </tr>
+                        <tr>
+                            <td>Pálya szélessége</td>
+                            <td>50 m</td>
+                        </tr>
+                        <tr>
+                            <td>Pálya talaja</td>
+                            <td>füves</td>
+                        </tr>
+                        <tr>
+                            <td>Forgalmi kör</td>
+                            <td>33-as felszállási irányból bal, 15-ös felszállási irányból jobb</td>
+                        </tr>
+                        <tr>
+                            <td>Megjegyzések</td>
+                            <td>1. Csak nappali VFR repülés folytatható
+                                2. AFIS szolgálat csak előzetes bejelentésre
+                                3. A repülőtér kizárólag a tulajdonos vagy üzembentartó
+                                engedélyével, vagy kényszerhelyzetben használható</td>
+                        </tr>
+                        <tr>
+                            <td>Figyelmeztetés</td>
+                            <td>35-ös irányban 1200 méter távolságra TV torony, 300 méteres
+                                körben minimális átrepülési magasság 600 méter</td>
+                        </tr>
+                     </table>
+                    <p>Repülőterünkről bővebben az alábbi linken is olvashatsz:
+                    </p>
+                    <a class="glowing-button" href="https://hu.wikipedia.org/wiki/Szentesi_rep%C3%BCl%C5%91t%C3%A9r">
+                            Szentesi Repülőtér - Wikipédia</a>
+                </article>
+                <article>
+                    <h3>Repülőgépeink</h3>
+                    <p>Repülőterünk jelenleg az alábbi egyesületi illetve magántulajdonban
+                        lévő motoros, motoros-vitorlázó és vitorlázó repülőgépek bázisául
+                        szolgál:</p>
+                        <div class="slideshow">
+                            <div class="slide" style="--i:0;">
+                                <h2>HA-5374
+                                    <span>R-26S Góbé</span>
+                                    <span>Egyesületi tulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_5374.jpg" alt="HA-5374 R-26S Góbé">
+                            </div>
+                            <div class="slide" style="--i:1;">
+                                <h2>HA-5520
+                                    <span>R-26SU Góbé</span>
+                                    <span>Egyesületi tulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_5520.jpg" alt="HA-5520 R-26SU Góbé">
+                            </div>
+                            <div class="slide" style="--i:2;">
+                                <h2>HA-4380
+                                    <span>SZD-30 Pirat</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_4380.jpg" alt="HA-4380 SZD-30 Pirat">
+                            </div>
+                            <div class="slide" style="--i:3;">
+                                <h2>HA-4252
+                                    <span>SZD-32A Foka5</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_4252.jpg" alt="HA-4252 SZD-32A Foka5">
+                            </div>
+                            <div class="slide" style="--i:4;">
+                                <h2>HA-4254
+                                    <span>SZD-32A Foka5</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_4254.jpg" alt="HA-4254 SZD-32A Foka5">
+                            </div>
+                            <div class="slide" style="--i:5;">
+                                <h2>HA-4061
+                                    <span>PW-5 Smyk</span>
+                                    <span>Egyesületi tulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_4061.jpg" alt="HA-4061 PW-5 Smyk">
+                            </div>
+                            <div class="slide" style="--i:6;">
+                                <h2>D-0083
+                                    <span>Rolladen-Schneider LS-3</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/d_0083.jpg" alt="D-0083 Rolladen-Schneider LS-3">
+                            </div>
+                            <div class="slide" style="--i:7;">
+                                <h2>HA-1202
+                                    <span>Scheibe SF-25C Falke</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_1202.jpg" alt="HA-1202 Scheibe SF-25C Falke">
+                            </div>
+                            <div class="slide" style="--i:8;">
+                                <h2>D-KOEN
+                                    <span>Scheibe SF-25C Falke</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/d_koen.jpg" alt="D-KOEN Scheibe SF-25C Falke">
+                            </div>
+                            <div class="slide" style="--i:9;">
+                                <h2>HA-1269
+                                    <span>Scheibe SF-25C Falke</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_1269.jpg" alt="HA-1269 Scheibe SF-25C Falke">
+                            </div>
+                            <div class="slide" style="--i:10;">
+                                <h2>D-KDTB
+                                    <span>Grob G109</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/d_kdtb.jpg" alt="D-KDTB Grob G109">
+                            </div>
+                            <div class="slide" style="--i:11;">
+                                <h2>HA-MBA
+                                    <span>Antonov An-2</span>
+                                    <span>Magántulajdon</span>
+                                </h2>
+                                <img src="./resources/about_images/ha_mba.jpg" alt="HA-MBA Antonov An-2">
+                            </div>
+                        </div>
+                </article>
 
-            </div>
-            <div class="contact-content">
+            </section>
+            <section class="members-content">TAGOKNAK</section>
+            <section class="events-content">RENDEZVÉNYEK</section>
+            <section class="services-content">SZOLGÁLTATÁSOK</section>
+            <section class="documents-content">DOKUMENTUMOK</section>
+            <section class="contact-content">
                 <div class="contact">
                     <h2>Lépj velünk kapcsolatba!</h2>
                     <form action="https://formsubmit.co/d5488e2563a424f08f6ece3333ff93b7" method="POST" class="contact-form">
-    <!--                 <form action="#"> -->
                         <input type="hidden" name="_captcha" value="false"/>
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_subject" value="Új Üzenet a LHSZ.HU-nak!!!"/>
@@ -272,12 +499,12 @@
                         <div class="input-box">
                             <div class="input-field field">
                                 <input type="text" placeholder="Teljes Név" id="name"
-                                 class="form-item box-shadow_glblue" name="Teljes&nbsp;Név" autocomplete="off"/>
+                                 class="form-item design-glblue" name="Teljes&nbsp;Név" autocomplete="off"/>
                                 <div class="blank-txt">Kérlek, töltsd ki a Teljes Név mezőt!</div>
                             </div>
                             <div class="input-field field">
                                 <input type="email" placeholder="Email-cím" id="email"
-                                 class="form-item box-shadow_glblue" name="Email-cím" autocomplete="off"/>
+                                 class="form-item design-glblue" name="Email-cím" autocomplete="off"/>
                                 <div class="blank-txt">Kérlek, töltsd ki az Email-cím mezőt!</div>
                                 <div class="error-txt">Kérlek, adj meg egy helyes Email-címet!</div>
                             </div>
@@ -285,18 +512,18 @@
                         <div class="input-box">
                             <div class="input-field field">
                                 <input type="tel" placeholder="Telefonszám" id="phone-number"
-                                class="form-item box-shadow_glblue" name="Telefonszám" autocomplete="off"/>
+                                class="form-item design-glblue" name="Telefonszám" autocomplete="off"/>
                                 <div class="blank-txt">Kérlek, töltsd ki a Telefonszám mezőt!</div>
                                 <div class="error-txt">Kérlek, adj meg egy helyes Telefonszámot!</div>
                             </div>
                             <div class="input-field field">
                                 <input type="text" placeholder="Üzenet tárgya" id="subject"
-                                 class="form-item box-shadow_glblue" name="Üzenet&nbsp;tárgya" autocomplete="off"/>
+                                 class="form-item design-glblue" name="Üzenet&nbsp;tárgya" autocomplete="off"/>
                                 <div class="blank-txt">Kérlek, töltsd ki az Üzenet tárgya mezőt!</div>
                             </div>
                         </div>
                         <div class="textarea-field field">
-                            <textarea class="form-item box-shadow_glblue" name="Üzenet&nbsp;szövege" id="message" cols="30" rows="10"
+                            <textarea class="form-item design-glblue" name="Üzenet&nbsp;szövege" id="message" cols="30" rows="10"
                              autocomplete="off" placeholder="Ide írd az üzeneted..."></textarea>
                             <div class="blank-txt">Kérlek, töltsd ki a Üzenet szövege mezőt!</div>
                         </div>
@@ -305,13 +532,13 @@
                     </form>
                 </div>
                 <div class="map">
-                    <iframe class="box-shadow_white" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2740.6607455659755!2d20.27974787633731!3d46.61370707111604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47440b8040000001%3A0x53342f05c2fe707d!2sSzentes%20Airport!5e0!3m2!1sen!2sro!4v1700420084322!5m2!1sen!2sro" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="box-shadow-white" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2740.6607455659755!2d20.27974787633731!3d46.61370707111604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47440b8040000001%3A0x53342f05c2fe707d!2sSzentes%20Airport!5e0!3m2!1sen!2sro!4v1700420084322!5m2!1sen!2sro" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-            </div>
+            </section>
         </main>
         <footer>
             <div class="flightinfo">
-                <ul class="flightinfo-menu box-shadow_glblue">
+                <ul class="flightinfo-menu design-glblue">
                     <li><a class="glowing-button" href="https://cumuluslog.com/login/" target="_blank">
                         <span class="button-text">Cumuluslog</span>
                         <span class="top-bottom"></span><span class="left-right"></span></a></li>
@@ -322,17 +549,15 @@
                         <span class="button-text">Pilotnet</span>
                         <span class="top-bottom"></span><span class="left-right"></span></a></li>
                 </ul>
-                <div class="flightinfo-toggle box-shadow_glblue">
+                <div class="flightinfo-toggle design-glblue">
                     <img src="https://img.icons8.com/glyph-neue/50/800000/airport.png" alt="Repülés információk"/>
                 </div>
             </div>
-            <div class="footer_items box-shadow_glblue">  
-                <div class="code_pilot_container box-shadow_white">
-                    <div class="code_pilot">
-                        <img src="./resources/index_images/code_pilot.png" alt="CODE-PILOT logó">
-                    </div>
-                    <div class="code_pilot_anim_bg">
-                    </div>
+            <div class="footer_items design-glblue">  
+                <div class="codepilot-logo">
+                    <a href="http://codepilot.fejlessz.hu/" target="_blank">
+                        <h2 data-text="CO[DE]PILOT">CO[DE]PILOT</h2>
+                    </a>
                 </div>
                 <div class="social_media">
                     <div class="social_media_items">
@@ -351,10 +576,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="icons8 box-shadow_white">
+                <div class="icons8">
                     <p>Icons by <a href="https://icons8.com" target="_blank">Icons8</a></p>
                 </div>
-                <div class="copyright box-shadow_white">
+                <div class="copyright">
                     <p>Copyright © 2023 József Nógrádi</p>
                 </div>
             </div>

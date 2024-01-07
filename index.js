@@ -1,4 +1,4 @@
-/*MENU TOGGLE vezérlése*/
+/* MENU TOGGLE vezérlése */
 const menuToggle = document.querySelector('nav ul.toggle');
 const menuList = document.querySelector('nav ul.menu');
 
@@ -13,7 +13,7 @@ menuToggle.addEventListener('click', () => {
     }
 })
 
-/*ASIDE TOGGLE vezérlése*/
+/* ASIDE TOGGLE vezérlése */
 const asideToggle = document.querySelector('aside .aside_toggle');
 const asideList = document.querySelector('aside .aside_content');
 
@@ -28,7 +28,7 @@ asideToggle.addEventListener('click', () => {
     }
 })
 
-/*FLIGHTINFO TOGGLE vezérlése*/
+/* FLIGHTINFO TOGGLE vezérlése */
 const flightinfoToggle = document.querySelector('.flightinfo .flightinfo-toggle');
 const flightinfoList = document.querySelector('.flightinfo .flightinfo-menu');
 
@@ -42,6 +42,25 @@ flightinfoToggle.addEventListener('click', () => {
         flightinfoList.classList.add("flightinfo-active");
     }
 })
+
+/* MENU vezérlése */
+const menubuttons = document.querySelectorAll('.menu .glowing-button');
+
+menubuttons.forEach(menubutton => {
+    menubutton.addEventListener('click', (menuevent) => {
+        menuevent.preventDefault();
+        let actualmenubutton = document.querySelector('.actual');
+        actualmenubutton.classList.remove('actual');
+        menubutton.classList.add('actual');
+        let actualsection = document.querySelector('.actualsection');
+        actualsection.classList.remove('actualsection');
+        let nextsection = document.querySelector('.' + menubutton.getAttribute('data-text'));
+        nextsection.classList.add('actualsection');
+    })
+})
+
+
+
 
 /* CONTACT FORM vezérlése */
 const submitButton = document.querySelector('form button.glowing-button');

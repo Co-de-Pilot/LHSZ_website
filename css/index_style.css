@@ -1,30 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-@property --color_main_blue {
+@property --color-main-blue {
     syntax: "<color>";
     inherits: true;
     initial-value: rgba(0, 180, 250, 0.1)
 }
 
-@property --color_glow_blue {
+@property --color-glow-blue {
     syntax: "<color>";
     inherits: true;
     initial-value: rgba(11, 138, 211, 0.8)
 }
 
-@property --color_active_red {
+@property --color-background-glb {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgba(11, 138, 211, 0.2)
+}
+
+@property --color-active-red {
     syntax: "<color>";
     inherits: true;
     initial-value: rgba(255, 80, 80, 0.8)
 }
 
-@property --color_font {
+@property --color-font {
     syntax: "<color>";
     inherits: true;
     initial-value: rgba(80,0,0, 0.8);
 }
 
-@property --color_white {
+@property --color-white {
     syntax: "<color>";
     inherits: true;
     initial-value: rgb(255, 255, 255);
@@ -51,10 +57,11 @@ textarea, input {
 /* ----------------------------- */
 /* A HTML elemeinek beállítása   */
 /* ----------------------------- */
-html {
+html, a {
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
-    color: var(--color_font);
+    color: var(--color-font);
+    text-shadow: 0 0 0.3em var(--color-white);
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
@@ -74,102 +81,16 @@ html {
 /* ---------------------------------- */
 /* Az általános stílusok beállítása   */
 /* ---------------------------------- */
-.box-shadow_white {
-    box-shadow: 0 0 5px 3px var(--color_white);
+.box-shadow-white {
+    box-shadow: 0 0 5px 3px var(--color-white);
 }
 .opacity_60 {
     opacity: 0.6;
 }
-.box-shadow_glblue {
-    box-shadow: 0 0 8px 2px var(--color_glow_blue);
+.design-glblue {
+    box-shadow: 0 0 8px 2px var(--color-glow-blue);
+    background: var(--color-background-glb);
 }
-.glowing-button {
-    position: relative;
-    color: var(--color_font);
-    text-transform: uppercase;
-    font-size: 1.0rem;
-    font-weight: 700;
-    padding: 8px;
-    margin: 1px;
-    background: transparent;
-    transition: all 0.8s linear;
-}
-.glowing-button .button-text {
-    position: relative;
-    z-index: 1;
-}
-.glowing-button:hover {
-    color: var(--color_glow_blue);
-    text-shadow: 0 0 8px var(--color_glow_blue);
-}
-.glowing-button.active {
-    color: var(--color_active_red);
-    text-shadow: 0 0 8px var(--color_active_red);
-}
-.glowing-button .top-bottom, .glowing-button .left-right {
-    position: absolute;
-    inset: 0;
-    display: block;
-}
-.glowing-button .top-bottom::before, .glowing-button .top-bottom::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    left: 0;
-    background-color: var(--color_glow_blue);
-    transition: all 0.8s ease-in-out;
-}
-.glowing-button .top-bottom::before {
-    top: 0;
-}
-.glowing-button .top-bottom::after {
-    bottom: 0;
-}
-.glowing-button:hover .top-bottom::before, .glowing-button:hover .top-bottom::after {
-    box-shadow: 0 0 8px 2px var(--color_glow_blue);
-    width: 100%;
-}
-.glowing-button.active .top-bottom::before, .glowing-button.active .top-bottom::after {
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
-    width: 100%;
-}
-.glowing-button .left-right::before, .glowing-button .left-right::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    top: 0;
-    opacity: 0;
-    background-color: var(--color_glow_blue);
-}
-.glowing-button .left-right::before {
-    transition-property: opacity, box-shadow;
-    transition-duration: 0s, 0.8s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0.8s, 0s;
-    left: 0;
-}
-.glowing-button .left-right::after {
-    right: 0;
-}
-.glowing-button:hover .left-right::before, .glowing-button:hover .left-right::after {
-    box-shadow: 0 0 8px 2px var(--color_glow_blue);
-    opacity: 1;
-}
-.glowing-button:hover .left-right::before {
-    transition-delay: 0s, 0s;
-}
-.glowing-button:hover .left-right::after {
-    transition-delay: 0.8s;
-}
-.glowing-button.active .left-right::before, .glowing-button.active .left-right::after {
-    opacity: 1;
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
-}
-
 
 
 /* ----------------------------- */
@@ -188,7 +109,7 @@ header {
     url(../resources/index_images/header_background/hbg_5.png);
     background-position: center center;
     background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color_white) inset;
+    box-shadow: 0 0 20px 20px var(--color-white) inset;
     animation-name: header_anim;
     animation-duration: 30s;
     animation-timing-function: ease-in-out;
@@ -221,7 +142,7 @@ header {
     gap: 20px;
     padding: 20px;
     width: 300px;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
 }
@@ -268,7 +189,7 @@ nav .toggle {
     position: relative;
     height: 50px;
     width: 50px;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
     transition: all 0.5s linear;
@@ -279,15 +200,15 @@ nav .toggle .sr-only {
     display: none;
 }
 nav .toggle.menu-active {
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
+    background-color: var(--color-active-red);
+    box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 nav .toggle li {
     list-style: none;
     position: relative;
     width: 80%;
     height: 4px;
-    background: var(--color_font);
+    background: var(--color-font);
     transition: all 0.8s linear;
 }
 nav .toggle.menu-active li:nth-of-type(1) {
@@ -308,7 +229,7 @@ nav .menu {
     list-style-type: none;
     padding: 3px;
     transition: 0.8s;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
 }
@@ -351,7 +272,7 @@ aside .aside_toggle {
     align-items: center;
     height: 50px;
     width: 50px;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
     transition: all 0.8s linear;
@@ -359,8 +280,8 @@ aside .aside_toggle {
     z-index: 10;
 }
 aside .aside_toggle.aside-active {
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
+    background-color: var(--color-active-red);
+    box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 aside .aside_toggle img {
     width: 42px;
@@ -375,7 +296,7 @@ aside .aside_toggle::before {
     content: "";
     width: 80%;
     height: 4px;
-    background: var(--color_font);
+    background: var(--color-font);
     transition: all 0.8s linear;
 }
 aside .aside_toggle.aside-active::before {
@@ -387,7 +308,7 @@ aside .aside_toggle::after {
     content: "";
     width: 80%;
     height: 4px;
-    background: var(--color_font);
+    background: var(--color-font);
     transition: all 0.8s linear;
 }
 aside .aside_toggle.aside-active::after {
@@ -404,7 +325,7 @@ aside .aside_content {
     position: absolute;
     top: 72px;
     translate: 120%;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
     transition: all 0.8s ease;
@@ -430,8 +351,6 @@ aside .aside_content a {
 }
 
 
-
-
 /* ------------------------------ */
 /* A MAIN rész elemeinek beállítása */
 /* ------------------------------ */
@@ -441,24 +360,31 @@ main {
     z-index: 0;
     min-height: 60vh;
 }
-main .index-content {
-    grid-area: INDEX;
+main section.actualsection {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem 0;
-    background-image: url(../resources/index_images/index_bg.png);
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color_white) inset;
 }
-main .index-content h2 {
+main section > h2 {
     font-size: 3rem;
     font-weight: 800;
     text-align: center;
     text-transform: uppercase;
-    padding: 1.1rem 0;
+    padding: 1.3rem 0;
+}
+
+
+/* -------------------------------------- */
+/* A MAIN/INDEX rész elemeinek beállítása */
+/* -------------------------------------- */
+main .index-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    background-image: url(../resources/index_images/index_bg.png);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: 0 0 20px 20px var(--color-white) inset;
 }
 main .index-content .news {
     width: 80%;
@@ -486,29 +412,87 @@ main .index-content .news p {
 main .index-content .news ul {
     margin: 0 1.1rem;
 }
+
+
+/* -------------------------------------- */
+/* A MAIN/ABOUT rész elemeinek beállítása */
+/* -------------------------------------- */
+main .about-content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 2rem auto;
+}
+main .about-content h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.3rem 0;
+}
+main .about-content p {
+    margin: 1.1rem 0;
+}
+main .about-content table td {
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    border: 1px solid var(--color-glow-blue);   
+}
+main .about-content ul li {
+    margin-left: 3rem;
+}
+
+
+/* -------------------------------------- */
+/* A MAIN/MEMBERS rész elemeinek beállítása */
+/* -------------------------------------- */
+main .members-content {
+    display: none;
+}
+
+
+/* -------------------------------------- */
+/* A MAIN/EVENTS rész elemeinek beállítása */
+/* -------------------------------------- */
+main .events-content {
+    display: none;
+}
+
+
+/* -------------------------------------- */
+/* A MAIN/SERVICES rész elemeinek beállítása */
+/* -------------------------------------- */
+main .services-content {
+    display: none;
+}
+
+
+/* -------------------------------------- */
+/* A MAIN/DOCUMENTS rész elemeinek beállítása */
+/* -------------------------------------- */
+main .documents-content {
+    display: none;
+}
+
+
+/* ----------------------------- */
+/* A MAIN/CONTACT elemeinek beállítása   */
+/* ----------------------------- */
 main .contact-content {
     grid-area: CONTACT;
     display: none;
-/*     display: grid;
-    grid-template-columns: 300px auto;
-    grid-template-areas:
-    "FORM FORM"
-    "MAP MAP";
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 5vh;
-    column-gap: 5vw; */
-/*     width: 100%;
-    height: 100%; */
+    gap: 2rem;
     background-image: url(../resources/contact_images/contact_bg.png);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color_white) inset;
+    box-shadow: 0 0 20px 20px var(--color-white) inset;
 }
-/* ----------------------------- */
-/* A MAIN/FORM elemeinek beállítása   */
-/* ----------------------------- */
 div.contact {
     grid-area: FORM;
     display: flex;
@@ -522,7 +506,7 @@ div.contact {
 div.contact h2 {
     font-size: 1.8rem;
     font-weight: 800;
-    color: var(--color_font);
+    color: var(--color-font);
     text-align: center;
     padding: 0 4rem;
     margin: 1rem;
@@ -536,7 +520,7 @@ form div.field textarea.form-item {
     width: 100%;
     padding: 0.5rem;
     background: transparent;
-    border: 2px solid var(--color_glow_blue);
+    border: 2px solid var(--color-glow-blue);
     border-radius: 5px;
     font-family: inherit;
     font-size: 0.8rem;
@@ -545,17 +529,17 @@ form div.field textarea.form-item {
 form div.field input.form-item.blank,
 form div.field input.form-item.error,
 form div.field textarea.form-item.blank {
-    border: 2px solid var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
+    border: 2px solid var(--color-active-red);
+    box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 form div.field .form-item::placeholder {
-    color: var(--color_font);
+    color: var(--color-font);
 }
 form div.field div.blank-txt,
 form div.field div.error-txt {
     display: none;
     font-size: 0.8rem;
-    color: var(--color_active_red);
+    color: var(--color-active-red);
     text-align: left;
     margin-top: 3px;
     margin-bottom: 8px;
@@ -577,7 +561,7 @@ form button.glowing-button {
     outline: none;
     padding: 8px;
     border-radius: 5px;
-    color: var(--color_font);
+    color: var(--color-font);
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -632,8 +616,8 @@ div.flightinfo {
     position: absolute;
     height: 50px;
     width: 50px;
-    color: var(--color_font);
-    background: transparent;
+    color: var(--color-font);
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
     transition: all 0.8s linear;
@@ -641,8 +625,8 @@ div.flightinfo {
     z-index: 10;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active {
-    background-color: var(--color_active_red);
-    box-shadow: 0 0 8px 2px var(--color_active_red);
+    background-color: var(--color-active-red);
+    box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 .flightinfo .flightinfo-toggle img {
     width: 42px;
@@ -657,7 +641,7 @@ div.flightinfo {
     content: "";
     width: 80%;
     height: 4px;
-    background: var(--color_font);
+    background: var(--color-font);
     transition: all 0.8s linear;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active::before {
@@ -669,7 +653,7 @@ div.flightinfo {
     content: "";
     width: 80%;
     height: 4px;
-    background: var(--color_font);
+    background: var(--color-font);
     transition: all 0.8s linear;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active::after {
@@ -685,7 +669,7 @@ div.flightinfo {
     padding: 3px;
     translate: -110%;
     transition: 0.8s;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
     z-index: 8;
@@ -715,7 +699,7 @@ div.flightinfo {
     min-width: 330px;
     z-index: 1;
     padding: 5px;
-    background: transparent;
+/*     background: transparent; */
     backdrop-filter: blur(3px);
     border-radius: 5px;
 }
@@ -735,8 +719,8 @@ div.flightinfo {
     transition: all 0.3s linear;
 }
 .social_media_items img:hover {
-    background-color: var(--color_glow_blue);
-    box-shadow: 0 0 5px 5px var(--color_glow_blue);
+    background-color: var(--color-white);
+    box-shadow: 0 0 5px 5px var(--color-white);
 }
 .icons8, .copyright {
     position: relative;
@@ -744,12 +728,12 @@ div.flightinfo {
     height: auto;
     margin: 3px;
     white-space: nowrap;
-    background-color: var(--color_white);
+/*     background-color: var(--color-white); */
 }
 .copyright p, .icons8 p{
     padding: 2px;
     font-size: 0.75rem;
-    color: var(--color_font);
+    color: var(--color-font);
 }
 
 
@@ -765,11 +749,6 @@ div.flightinfo {
     }
     .lhsz_slogan {
         display: block;
-    }
-    div.contact-content {
-        grid-template-areas:
-        "FORM FORM"
-        "MAP MAP";
     }
     .contact form .input-box {
         display: flex;
