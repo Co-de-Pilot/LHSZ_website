@@ -1,823 +1,856 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
 @property --color-main-blue {
-    syntax: "<color>";
-    inherits: true;
-    initial-value: rgba(0, 180, 250, 0.1)
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(0, 180, 250, 0.1);
 }
 
 @property --color-glow-blue {
-    syntax: "<color>";
-    inherits: true;
-    initial-value: rgba(11, 138, 211, 0.8)
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(11, 138, 211, 0.8);
 }
 
 @property --color-background-glb {
-    syntax: "<color>";
-    inherits: true;
-    initial-value: rgba(11, 138, 211, 0.2)
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(11, 138, 211, 0.2);
 }
 
 @property --color-active-red {
-    syntax: "<color>";
-    inherits: true;
-    initial-value: rgba(255, 80, 80, 0.8)
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 80, 80, 0.8);
 }
 
 @property --color-font {
-    syntax: "<color>";
-    inherits: true;
-    initial-value: rgba(80,0,0, 0.8);
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(80, 0, 0, 0.8);
 }
 
 @property --color-white {
-    syntax: "<color>";
-    inherits: true;
-    initial-value: rgb(255, 255, 255);
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(255, 255, 255);
 }
-
 
 /* ----------------------------- */
 /* A RESET beállítása            */
 /* ----------------------------- */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    user-select: none;
-    text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  text-decoration: none;
 }
-textarea, input {
-    border: 0;
-    outline: 0;
+textarea,
+input {
+  border: 0;
+  outline: 0;
 }
-
-
 
 /* ----------------------------- */
 /* A HTML elemeinek beállítása   */
 /* ----------------------------- */
-html, a {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    color: var(--color-font);
-    text-shadow: 0 0 0.3em var(--color-white);
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+html,
+a {
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  color: var(--color-font);
+  text-shadow: 0 0 0.3em var(--color-white);
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 .body-wrapper {
-    min-width: 330px;
-    display: grid;
-    grid-template-columns: auto 66px;
-    grid-template-areas:
+  min-width: 330px;
+  display: grid;
+  grid-template-columns: auto 66px;
+  grid-template-areas:
     "HEADER HEADER"
     "NAV ASIDE"
     "MAIN MAIN"
     "FOOTER FOOTER";
-    overflow-x: clip;
+  overflow-x: clip;
 }
-
 
 /* ---------------------------------- */
 /* Az általános stílusok beállítása   */
 /* ---------------------------------- */
 .box-shadow-white {
-    box-shadow: 0 0 5px 3px var(--color-white);
+  box-shadow: 0 0 5px 3px var(--color-white);
 }
 .opacity_60 {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 .design-glblue {
-    box-shadow: 0 0 8px 2px var(--color-glow-blue);
-    background: var(--color-background-glb);
+  box-shadow: 0 0 8px 2px var(--color-glow-blue);
+  background: var(--color-background-glb);
 }
-
 
 /* ----------------------------- */
 /* A HEADER elemeinek beállítása */
 /* ----------------------------- */
 header {
-    grid-area: HEADER;
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-    background-image:
-    url(../resources/index_images/header_background/hbg_1.png),
+  grid-area: HEADER;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  background-image: url(../resources/index_images/header_background/hbg_1.png),
     url(../resources/index_images/header_background/hbg_2.png),
     url(../resources/index_images/header_background/hbg_3.png),
     url(../resources/index_images/header_background/hbg_4.png),
     url(../resources/index_images/header_background/hbg_5.png);
-    background-position: center center;
-    background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color-white) inset;
-    animation-name: header_anim;
-    animation-duration: 30s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 0 20px 20px var(--color-white) inset;
+  animation-name: header_anim;
+  animation-duration: 30s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 @keyframes header_anim {
-    0%, 10% {
-        background-image: url(../resources/index_images/header_background/hbg_1.png);
-    }
-    20%, 30% {
-        background-image: url(../resources/index_images/header_background/hbg_2.png);
-    }
-    40%, 50% {
-        background-image: url(../resources/index_images/header_background/hbg_3.png);
-    }
-    60%, 70% {
-        background-image: url(../resources/index_images/header_background/hbg_4.png);
-    }
-    80%, 90% {
-        background-image: url(../resources/index_images/header_background/hbg_5.png);
-    }
+  0%,
+  10% {
+    background-image: url(../resources/index_images/header_background/hbg_1.png);
+  }
+  20%,
+  30% {
+    background-image: url(../resources/index_images/header_background/hbg_2.png);
+  }
+  40%,
+  50% {
+    background-image: url(../resources/index_images/header_background/hbg_3.png);
+  }
+  60%,
+  70% {
+    background-image: url(../resources/index_images/header_background/hbg_4.png);
+  }
+  80%,
+  90% {
+    background-image: url(../resources/index_images/header_background/hbg_5.png);
+  }
 }
 .header_items {
-    display: grid;
-    grid-template-areas:
+  display: grid;
+  grid-template-areas:
     "LOGO"
     "INFO";
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
-    padding: 20px;
-    width: 300px;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 300px;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
 }
-.header_items img{
-    object-fit: cover;
+.header_items img {
+  object-fit: cover;
 }
 .logo {
-    grid-area: LOGO;
-    height: 150px;
-}    
+  grid-area: LOGO;
+  height: 150px;
+}
 .lhsz_info {
-    grid-area: INFO;
-    height: 150px;
+  grid-area: INFO;
+  height: 150px;
 }
 .lhsz_slogan {
-    grid-area: ANIM;
-    display: none;
-    width: 540px;
-    height: 150px;
+  grid-area: ANIM;
+  display: none;
+  width: 540px;
+  height: 150px;
 }
 
 /* ----------------------------- */
 /* A NAV elemeinek beállítása   */
 /* ----------------------------- */
 nav {
-    grid-area: NAV;
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: sticky;
-    top: 1vh;
-    width: 66px;
-    padding: 0.5rem;
-    z-index: 8;
+  grid-area: NAV;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: sticky;
+  top: 1vh;
+  width: 66px;
+  padding: 0.5rem;
+  z-index: 8;
 }
 nav .toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    align-self: normal;
-    position: relative;
-    height: 50px;
-    width: 50px;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
-    transition: all 0.5s linear;
-    cursor: pointer;
-    z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  align-self: normal;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  transition: all 0.5s linear;
+  cursor: pointer;
+  z-index: 10;
 }
 nav .toggle .sr-only {
-    display: none;
+  display: none;
 }
 nav .toggle.menu-active {
-    background-color: var(--color-active-red);
-    box-shadow: 0 0 8px 2px var(--color-active-red);
+  background-color: var(--color-active-red);
+  box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 nav .toggle li {
-    list-style: none;
-    position: relative;
-    width: 80%;
-    height: 4px;
-    background: var(--color-font);
-    transition: all 0.8s linear;
+  list-style: none;
+  position: relative;
+  width: 80%;
+  height: 4px;
+  background: var(--color-font);
+  transition: all 0.8s linear;
 }
 nav .toggle.menu-active li:nth-of-type(1) {
-    transform: translateY(13.5px) rotate(45deg);
+  transform: translateY(13.5px) rotate(45deg);
 }
 nav .toggle.menu-active li:nth-of-type(2) {
-    opacity: 0;
+  opacity: 0;
 }
 nav .toggle.menu-active li:nth-of-type(3) {
-    transform: translateY(-13.5px) rotate(-45deg);
+  transform: translateY(-13.5px) rotate(-45deg);
 }
 nav .menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 72px;
-    translate: -110%;
-    list-style-type: none;
-    padding: 3px;
-    transition: 0.8s;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 72px;
+  translate: -110%;
+  list-style-type: none;
+  padding: 3px;
+  transition: 0.8s;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
 }
 nav .menu.menu-active {
-    translate: 0;
+  translate: 0;
 }
 nav .menu li {
-    list-style: none;
-    position: relative;
-    width: 200px;
-    text-align: left;
+  list-style: none;
+  position: relative;
+  width: 200px;
+  text-align: left;
 }
 nav .menu li a {
-    text-decoration: none;
-    display: block;
+  text-decoration: none;
+  display: block;
 }
-
 
 /* ------------------------------ */
 /* Az ASIDE rész elemeinek beállítása */
 /* ------------------------------ */
 aside {
-    grid-area: ASIDE;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    gap: 10px;
-    position: sticky;
-    width: 66px;
-    padding: 0.5rem;
-    top: 1vh;
-    left: calc(100% - 66px);
-    z-index: 8;
+  grid-area: ASIDE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 10px;
+  position: sticky;
+  width: 66px;
+  padding: 0.5rem;
+  top: 1vh;
+  left: calc(100% - 66px);
+  z-index: 8;
 }
 aside .aside_toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
-    transition: all 0.8s linear;
-    cursor: pointer;
-    z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  transition: all 0.8s linear;
+  cursor: pointer;
+  z-index: 10;
 }
 aside .aside_toggle.aside-active {
-    background-color: var(--color-active-red);
-    box-shadow: 0 0 8px 2px var(--color-active-red);
+  background-color: var(--color-active-red);
+  box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 aside .aside_toggle img {
-    width: 42px;
-    height: 42px;
-    transition: all 0.8s linear;
+  width: 42px;
+  height: 42px;
+  transition: all 0.8s linear;
 }
 aside .aside_toggle.aside-active img {
-    opacity: 0;
+  opacity: 0;
 }
 aside .aside_toggle::before {
-    opacity: 0;
-    content: "";
-    width: 80%;
-    height: 4px;
-    background: var(--color-font);
-    transition: all 0.8s linear;
+  opacity: 0;
+  content: "";
+  width: 80%;
+  height: 4px;
+  background: var(--color-font);
+  transition: all 0.8s linear;
 }
 aside .aside_toggle.aside-active::before {
-    opacity: 1;
-    transform: translateY(22.5px) rotate(45deg);
+  opacity: 1;
+  transform: translateY(22.5px) rotate(45deg);
 }
 aside .aside_toggle::after {
-    opacity: 0;
-    content: "";
-    width: 80%;
-    height: 4px;
-    background: var(--color-font);
-    transition: all 0.8s linear;
+  opacity: 0;
+  content: "";
+  width: 80%;
+  height: 4px;
+  background: var(--color-font);
+  transition: all 0.8s linear;
 }
 aside .aside_toggle.aside-active::after {
-    opacity: 1;
-    transform: translateY(-22.5px) rotate(-45deg);
+  opacity: 1;
+  transform: translateY(-22.5px) rotate(-45deg);
 }
 aside .aside_content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 5px;
-    overflow: hidden;
-    position: absolute;
-    top: 72px;
-    translate: 120%;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
-    transition: all 0.8s ease;
-    z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+  position: absolute;
+  top: 72px;
+  translate: 120%;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  transition: all 0.8s ease;
+  z-index: 8;
 }
 aside .aside_content.aside-active {
-    translate: 0;
+  translate: 0;
 }
-aside .aside_content .aside_content_items{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 110px;
-    padding: 5px;
+aside .aside_content .aside_content_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 110px;
+  padding: 5px;
 }
 aside img {
-    object-fit: cover;
+  object-fit: cover;
 }
 aside .aside_content a {
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
 }
-
 
 /* ------------------------------ */
 /* A MAIN rész elemeinek beállítása */
 /* ------------------------------ */
 main {
-    grid-area: MAIN;
-    position: relative;
-    z-index: 0;
-    min-height: 60vh;
+  grid-area: MAIN;
+  position: relative;
+  z-index: 0;
+  min-height: 60vh;
 }
 main section.actualsection {
-    display: flex;
+  display: flex;
 }
 main section > h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 1.3rem 0;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.3rem 0;
 }
-
 
 /* -------------------------------------- */
 /* A MAIN/INDEX rész elemeinek beállítása */
 /* -------------------------------------- */
 main .index-content {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem auto;
-    background-image: url(../resources/index_images/index_bg.png);
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color-white) inset;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  background-image: url(../resources/index_images/index_bg.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  box-shadow: 0 0 20px 20px var(--color-white) inset;
 }
 main .index-content .news {
-    width: 80%;
-    margin: 3rem;
+  width: 80%;
+  margin: 3rem;
 }
 main .index-content .news .news-headline {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 main .index-content .news h3,
 main .index-content .news h4 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 1.1rem 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.1rem 0;
 }
 main .index-content .news h4 {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 main .index-content .news p {
-    margin: 1.1rem 0;
+  margin: 1.1rem 0;
 }
 main .index-content .news ul {
-    margin: 0 1.1rem;
+  margin: 0 1.1rem;
 }
-
 
 /* -------------------------------------- */
 /* A MAIN/ABOUT rész elemeinek beállítása */
 /* -------------------------------------- */
 main .about-content {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 2rem auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 2rem auto 4rem;
 }
 main .about-content h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 1.3rem 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
 }
 main .about-content p {
-    margin: 1.1rem 0;
+  margin: 1.1rem 0;
 }
 main .about-content table td {
-    font-size: 0.8rem;
-    padding: 0.3rem;
-    border: 1px solid var(--color-glow-blue);   
+  font-size: 0.8rem;
+  padding: 0.3rem;
+  border: 1px solid var(--color-glow-blue);
 }
 main .about-content ul li {
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
-
+main .about-content .memo-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+main .about-content .memo-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: clamp(270px, 70vw, 600px);
+}
+main .about-content .memo-card ul li:first-child {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1.3rem 0;
+}
 
 /* -------------------------------------- */
 /* A MAIN/MEMBERS rész elemeinek beállítása */
 /* -------------------------------------- */
 main .members-content {
-    display: none;
+  display: none;
 }
-
 
 /* -------------------------------------- */
 /* A MAIN/EVENTS rész elemeinek beállítása */
 /* -------------------------------------- */
 main .events-content {
-    display: none;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 2rem auto 4rem;
 }
-
+main .events-content h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+main .events-content article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+main .events-content img {
+  width: clamp(270px, 90%, 750px);
+  margin: 1rem auto;
+}
 
 /* -------------------------------------- */
 /* A MAIN/SERVICES rész elemeinek beállítása */
 /* -------------------------------------- */
 main .services-content {
-    display: none;
+  display: none;
 }
-
 
 /* -------------------------------------- */
 /* A MAIN/DOCUMENTS rész elemeinek beállítása */
 /* -------------------------------------- */
 main .documents-content {
-    display: none;
+  display: none;
 }
-
 
 /* ----------------------------- */
 /* A MAIN/CONTACT elemeinek beállítása   */
 /* ----------------------------- */
 main .contact-content {
-    grid-area: CONTACT;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background-image: url(../resources/contact_images/contact_bg.png);
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    box-shadow: 0 0 20px 20px var(--color-white) inset;
+  grid-area: CONTACT;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-image: url(../resources/contact_images/contact_bg.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  box-shadow: 0 0 20px 20px var(--color-white) inset;
 }
 div.contact {
-    grid-area: FORM;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    backdrop-filter: blur(3px);
+  grid-area: FORM;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(3px);
 }
 
 div.contact h2 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--color-font);
-    text-align: center;
-    padding: 0 4rem;
-    margin: 1rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-font);
+  text-align: center;
+  padding: 0 4rem;
+  margin: 1rem;
 }
 div.contact form {
-    width: clamp(300px, 45vw, 800px);
-    text-align: center;
+  width: clamp(300px, 45vw, 800px);
+  text-align: center;
 }
 form div.field input.form-item,
 form div.field textarea.form-item {
-    width: 100%;
-    padding: 0.5rem;
-    background: transparent;
-    border: 2px solid var(--color-glow-blue);
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 0.8rem;
-    margin-top: 11px;
+  width: 100%;
+  padding: 0.5rem;
+  background: transparent;
+  border: 2px solid var(--color-glow-blue);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  margin-top: 11px;
 }
 form div.field input.form-item.blank,
 form div.field input.form-item.error,
 form div.field textarea.form-item.blank {
-    border: 2px solid var(--color-active-red);
-    box-shadow: 0 0 8px 2px var(--color-active-red);
+  border: 2px solid var(--color-active-red);
+  box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 form div.field .form-item::placeholder {
-    color: var(--color-font);
+  color: var(--color-font);
 }
 form div.field div.blank-txt,
 form div.field div.error-txt {
-    display: none;
-    font-size: 0.8rem;
-    color: var(--color-active-red);
-    text-align: left;
-    margin-top: 3px;
-    margin-bottom: 8px;
+  display: none;
+  font-size: 0.8rem;
+  color: var(--color-active-red);
+  text-align: left;
+  margin-top: 3px;
+  margin-bottom: 8px;
 }
 form div.field.blank .blank-txt {
-    display: block;
+  display: block;
 }
 form div.field.error .error-txt {
-    display: block;
+  display: block;
 }
 form div.textarea-field .blank-txt {
-    margin-top: -1px;
+  margin-top: -1px;
 }
 form div.textarea-field .form-item {
-    resize: none;
+  resize: none;
 }
 form button.glowing-button {
-    border: none;
-    outline: none;
-    padding: 8px;
-    border-radius: 5px;
-    color: var(--color-font);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-family: inherit;
-    cursor: pointer;
-    margin: 10px;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: var(--color-font);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 10px;
 }
 
 .map {
-    grid-area: MAP;
-    text-align: center;
-    margin-bottom: 25svh;
+  grid-area: MAP;
+  text-align: center;
+  margin-bottom: 25svh;
 }
 .map iframe {
-    width: clamp(300px, 60vw, 800px);
+  width: clamp(300px, 60vw, 800px);
 }
-
 
 /* ----------------------------- */
 /* A FOOTER elemeinek beállítása */
 /* ----------------------------- */
 footer {
-    grid-area: FOOTER;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0.5rem;
-    position: fixed;
-    bottom: 0;
+  grid-area: FOOTER;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
 }
 /* ------------------------------ */
 /* A FOOTER/FLIGHTINFO rész elemeinek beállítása */
 /* ------------------------------ */
 div.flightinfo {
-/*     display: flex;
+  /*     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start; */
-    position: absolute;
-    top: -8vh;
-/*     gap: 10px; */
-/*     width: 220px; */
-/*     padding-bottom: 1rem; */
-    z-index: 8;
+  position: absolute;
+  top: -8vh;
+  /*     gap: 10px; */
+  /*     width: 220px; */
+  /*     padding-bottom: 1rem; */
+  z-index: 8;
 }
 .flightinfo .flightinfo-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    color: var(--color-font);
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
-    transition: all 0.8s linear;
-    cursor: pointer;
-    z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  color: var(--color-font);
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  transition: all 0.8s linear;
+  cursor: pointer;
+  z-index: 10;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active {
-    background-color: var(--color-active-red);
-    box-shadow: 0 0 8px 2px var(--color-active-red);
+  background-color: var(--color-active-red);
+  box-shadow: 0 0 8px 2px var(--color-active-red);
 }
 .flightinfo .flightinfo-toggle img {
-    width: 42px;
-    height: 42px;
-    transition: all 0.8s linear;
+  width: 42px;
+  height: 42px;
+  transition: all 0.8s linear;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active img {
-    opacity: 0;
+  opacity: 0;
 }
 .flightinfo .flightinfo-toggle::before {
-    opacity: 0;
-    content: "";
-    width: 80%;
-    height: 4px;
-    background: var(--color-font);
-    transition: all 0.8s linear;
+  opacity: 0;
+  content: "";
+  width: 80%;
+  height: 4px;
+  background: var(--color-font);
+  transition: all 0.8s linear;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active::before {
-    opacity: 1;
-    transform: translateY(22.5px) rotate(45deg);
+  opacity: 1;
+  transform: translateY(22.5px) rotate(45deg);
 }
 .flightinfo .flightinfo-toggle::after {
-    opacity: 0;
-    content: "";
-    width: 80%;
-    height: 4px;
-    background: var(--color-font);
-    transition: all 0.8s linear;
+  opacity: 0;
+  content: "";
+  width: 80%;
+  height: 4px;
+  background: var(--color-font);
+  transition: all 0.8s linear;
 }
 .flightinfo .flightinfo-toggle.flightinfo-active::after {
-    opacity: 1;
-    transform: translateY(-22.5px) rotate(-45deg);
+  opacity: 1;
+  transform: translateY(-22.5px) rotate(-45deg);
 }
 .flightinfo ul.flightinfo-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: -18svh;
-    list-style-type: none;
-    padding: 3px;
-    translate: -110%;
-    transition: 0.8s;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
-    z-index: 8;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -18svh;
+  list-style-type: none;
+  padding: 3px;
+  translate: -110%;
+  transition: 0.8s;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  z-index: 8;
 }
 .flightinfo ul.flightinfo-menu.flightinfo-active {
-    translate: 0;
+  translate: 0;
 }
 .flightinfo ul.flightinfo-menu li {
-    list-style: none;
-    position: relative;
-    width: 200px;
-    text-align: left;
+  list-style: none;
+  position: relative;
+  width: 200px;
+  text-align: left;
 }
 .flightinfo ul.flightinfo-menu li a {
-    text-decoration: none;
-    display: block;
+  text-decoration: none;
+  display: block;
 }
 
 .footer_items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 10px;
-    column-gap: 1%;
-    width: 100%;
-    min-width: 330px;
-    z-index: 1;
-    padding: 5px;
-/*     background: transparent; */
-    backdrop-filter: blur(3px);
-    border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 1%;
+  width: 100%;
+  min-width: 330px;
+  z-index: 1;
+  padding: 5px;
+  /*     background: transparent; */
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
 }
 .social_media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 5px;
-    width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  width: fit-content;
 }
-.social_media_items{
-    padding: 0 10px;
-} 
+.social_media_items {
+  padding: 0 10px;
+}
 .social_media_items img {
-    height: 1.5rem;
-    object-fit: cover;
-    transition: all 0.3s linear;
+  height: 1.5rem;
+  object-fit: cover;
+  transition: all 0.3s linear;
 }
 .social_media_items img:hover {
-    background-color: var(--color-white);
-    box-shadow: 0 0 5px 5px var(--color-white);
+  background-color: var(--color-white);
+  box-shadow: 0 0 5px 5px var(--color-white);
 }
-.icons8, .copyright {
-    position: relative;
-    width: auto;
-    height: auto;
-    margin: 3px;
-    white-space: nowrap;
-/*     background-color: var(--color-white); */
+.icons8,
+.copyright {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 3px;
+  white-space: nowrap;
+  /*     background-color: var(--color-white); */
 }
-.copyright p, .icons8 p{
-    padding: 2px;
-    font-size: 0.75rem;
-    color: var(--color-font);
+.copyright p,
+.icons8 p {
+  padding: 2px;
+  font-size: 0.75rem;
+  color: var(--color-font);
 }
-
-
-
 
 @media screen and (min-width: 768px) {
-    .header_items{
-        grid-template-areas:
-        "LOGO INFO"
-        "ANIM ANIM";
-        width: 600px;
-        height: 380px;
-    }
-    .lhsz_slogan {
-        display: block;
-    }
-    .contact form .input-box {
-        display: flex;
-        justify-content: space-between;
-    }
-    .input-box .input-field {
-        width: 48%;
-    }
+  .header_items {
+    grid-template-areas:
+      "LOGO INFO"
+      "ANIM ANIM";
+    width: 600px;
+    height: 380px;
+  }
+  .lhsz_slogan {
+    display: block;
+  }
+  .contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .input-box .input-field {
+    width: 48%;
+  }
 }
 
 @media screen and (min-width: 992px) {
-    .body-wrapper {
-        grid-template-areas:
-        "HEADER HEADER"
-        "NAV NAV"
-        "MAIN ASIDE"
-        "FOOTER FOOTER";
-    }
-    nav {
-        display: block;
-        width: auto;
-        height: auto;
-    }
-    nav ul {
-        margin: auto;
-    }
-    nav ul.toggle{
-        display: none;
-    }
-    nav ul.menu {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        position: static;
-        translate: 0;
-    }
-    nav ul.menu li {
-        display: inline;
-        width: auto;
-    }
-    aside {
-        top: 72px;
-    }
-    aside .aside_toggle {
-        display: none;
-    }
-    aside .aside_content {
-        position: sticky;
-        translate: 0;
-        height: calc(100vh - 80px);
-    }
-    main {
-        margin-top: 0;
-        width: calc(100vw - 150px);
-    }
-    footer {
-        width: calc(100vw - 140px);
-    }
+  .body-wrapper {
+    grid-template-areas:
+      "HEADER HEADER"
+      "NAV NAV"
+      "MAIN ASIDE"
+      "FOOTER FOOTER";
+  }
+  nav {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+  nav ul {
+    margin: auto;
+  }
+  nav ul.toggle {
+    display: none;
+  }
+  nav ul.menu {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    position: static;
+    translate: 0;
+  }
+  nav ul.menu li {
+    display: inline;
+    width: auto;
+  }
+  aside {
+    top: 72px;
+  }
+  aside .aside_toggle {
+    display: none;
+  }
+  aside .aside_content {
+    position: sticky;
+    translate: 0;
+    height: calc(100vh - 80px);
+  }
+  main {
+    margin-top: 0;
+    width: calc(100vw - 150px);
+  }
+  footer {
+    width: calc(100vw - 140px);
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    header {
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
-    .header_items {
-        grid-template-areas:
-        "LOGO INFO ANIM";
-        justify-content: space-evenly;
-        width: auto;
-        height: auto;
-    }
+  header {
+    background-size: contain;
+    background-repeat: repeat-x;
+  }
+  .header_items {
+    grid-template-areas: "LOGO INFO ANIM";
+    justify-content: space-evenly;
+    width: auto;
+    height: auto;
+  }
 }
