@@ -3,14 +3,8 @@ const menuToggle = document.querySelector("nav ul.toggle");
 const menuList = document.querySelector("nav ul.menu");
 
 menuToggle.addEventListener("click", () => {
-  const menuActiveItems = document.querySelectorAll(".menu-active");
-  menuActiveItems.forEach((menuActiveItem) => {
-    menuActiveItem.classList.remove("menu-active");
-  });
-  if (menuActiveItems.length == 0) {
-    menuToggle.classList.add("menu-active");
-    menuList.classList.add("menu-active");
-  }
+  menuToggle.classList.toggle("menu-active");
+  menuList.classList.toggle("menu-active");
 });
 
 /* ASIDE TOGGLE vezérlése */
@@ -18,14 +12,8 @@ const asideToggle = document.querySelector("aside .aside_toggle");
 const asideList = document.querySelector("aside .aside_content");
 
 asideToggle.addEventListener("click", () => {
-  const asideActiveItems = document.querySelectorAll(".aside-active");
-  asideActiveItems.forEach((asideActiveItem) => {
-    asideActiveItem.classList.remove("aside-active");
-  });
-  if (asideActiveItems.length == 0) {
-    asideToggle.classList.add("aside-active");
-    asideList.classList.add("aside-active");
-  }
+    asideToggle.classList.toggle("aside-active");
+    asideList.classList.toggle("aside-active");
 });
 
 /* FLIGHTINFO TOGGLE vezérlése */
@@ -35,14 +23,8 @@ const flightinfoToggle = document.querySelector(
 const flightinfoList = document.querySelector(".flightinfo .flightinfo-menu");
 
 flightinfoToggle.addEventListener("click", () => {
-  const flightinfoActiveItems = document.querySelectorAll(".flightinfo-active");
-  flightinfoActiveItems.forEach((flightinfoActiveItem) => {
-    flightinfoActiveItem.classList.remove("flightinfo-active");
-  });
-  if (flightinfoActiveItems.length == 0) {
-    flightinfoToggle.classList.add("flightinfo-active");
-    flightinfoList.classList.add("flightinfo-active");
-  }
+    flightinfoToggle.classList.toggle("flightinfo-active");
+    flightinfoList.classList.toggle("flightinfo-active");
 });
 
 /* MENU vezérlése */

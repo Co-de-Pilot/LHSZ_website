@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  width: clamp(270px, 40%, 450px);
+}
+.card .card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 70%;
+  height: 50%;
+  backdrop-filter: blur(3px);
+}
+@media (hover) {
+  .card .card-content {
+    left: 100%;
+    opacity: 0;
+    transition: all 0.8s ease;
+  }
+  .card:hover .card-content {
+    opacity: 1;
+    left: 15%;
+  }
+}
+.card .card-content a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--color-white);
+}
+.card img {
+  width: clamp(270px, 100%, 450px);
+  border-radius: 1rem;
+}

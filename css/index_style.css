@@ -36,6 +36,12 @@
   initial-value: rgb(255, 255, 255);
 }
 
+@property --color-white-faded {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(255, 255, 255);
+}
+
 /* ----------------------------- */
 /* A RESET beállítása            */
 /* ----------------------------- */
@@ -359,6 +365,10 @@ main {
   z-index: 0;
   min-height: 60vh;
 }
+main > section {
+  margin: 2rem auto 8rem;
+  /*   margin-bottom: 5rem; */
+}
 main section.actualsection {
   display: flex;
 }
@@ -377,7 +387,6 @@ main .index-content {
   display: none;
   flex-direction: column;
   align-items: center;
-  margin: 2rem auto;
   background-image: url(../resources/index_images/index_bg.png);
   background-position: center center;
   background-attachment: fixed;
@@ -420,7 +429,6 @@ main .about-content {
   justify-content: center;
   align-items: center;
   width: 80%;
-  margin: 2rem auto 4rem;
 }
 main .about-content h3 {
   font-size: 1.8rem;
@@ -448,10 +456,20 @@ main .about-content .memo-cards {
   gap: 3rem;
 }
 main .about-content .memo-card {
-  display: flex;
+  display: grid;
   justify-content: center;
-  align-items: flex-start;
-  width: clamp(270px, 70vw, 600px);
+  align-items: center;
+  grid-template-areas:
+    "IMAGE"
+    "CONTENT";
+  width: clamp(270px, 70vw, 900px);
+}
+main .about-content .memo-card img {
+  grid-area: IMAGE;
+}
+main .about-content .memo-card ul {
+  grid-area: CONTENT;
+  width: clamp(270px, 70%, 450px);
 }
 main .about-content .memo-card ul li:first-child {
   font-size: 1.3rem;
@@ -460,25 +478,29 @@ main .about-content .memo-card ul li:first-child {
   padding: 1.3rem 0;
 }
 
-/* -------------------------------------- */
+/* ---------------------------------------- */
 /* A MAIN/MEMBERS rész elemeinek beállítása */
-/* -------------------------------------- */
+/* ---------------------------------------- */
 main .members-content {
   display: none;
 }
 
-/* -------------------------------------- */
+/* --------------------------------------- */
 /* A MAIN/EVENTS rész elemeinek beállítása */
-/* -------------------------------------- */
+/* --------------------------------------- */
 main .events-content {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 80%;
-  margin: 2rem auto 4rem;
 }
-main .events-content h3 {
+main .events-content .event-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+main .events-content article h3 {
   font-size: 1.8rem;
   font-weight: 800;
   text-align: center;
@@ -494,7 +516,7 @@ main .events-content article {
   gap: 1rem;
   margin: 1rem 0;
 }
-main .events-content img {
+main .events-content article img {
   width: clamp(270px, 90%, 750px);
   margin: 1rem auto;
 }
@@ -504,18 +526,95 @@ main .events-content img {
 /* -------------------------------------- */
 main .services-content {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+main .services-content .service-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+main .services-content article h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+main .services-content article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+main .services-content article .services-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  width: clamp(270px, 100%, 900px);
+}
+main .services-content article .services-element img {
+  width: clamp(270px, 40%, 450px);
+  border-radius: 1rem;
+}
+main .services-content article .services-element .services-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: clamp(270px, calc(60% - 3rem), calc(60% - 3rem));
 }
 
-/* -------------------------------------- */
+/* ------------------------------------------ */
 /* A MAIN/DOCUMENTS rész elemeinek beállítása */
-/* -------------------------------------- */
+/* ------------------------------------------ */
 main .documents-content {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+main .services-content article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+main .documents-content article h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+}
+main .documents-content article .documents-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  width: clamp(270px, 100%, 900px);
 }
 
-/* ----------------------------- */
+/* ------------------------------------- */
 /* A MAIN/CONTACT elemeinek beállítása   */
-/* ----------------------------- */
+/* ------------------------------------- */
 main .contact-content {
   grid-area: CONTACT;
   display: none;
@@ -632,15 +731,8 @@ footer {
 /* A FOOTER/FLIGHTINFO rész elemeinek beállítása */
 /* ------------------------------ */
 div.flightinfo {
-  /*     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start; */
   position: absolute;
   top: -8vh;
-  /*     gap: 10px; */
-  /*     width: 220px; */
-  /*     padding-bottom: 1rem; */
   z-index: 8;
 }
 .flightinfo .flightinfo-toggle {
@@ -652,7 +744,6 @@ div.flightinfo {
   height: 50px;
   width: 50px;
   color: var(--color-font);
-  /*     background: transparent; */
   backdrop-filter: blur(3px);
   border-radius: 5px;
   transition: all 0.8s linear;
@@ -704,7 +795,6 @@ div.flightinfo {
   padding: 3px;
   translate: -110%;
   transition: 0.8s;
-  /*     background: transparent; */
   backdrop-filter: blur(3px);
   border-radius: 5px;
   z-index: 8;
@@ -734,7 +824,6 @@ div.flightinfo {
   min-width: 330px;
   z-index: 1;
   padding: 5px;
-  /*     background: transparent; */
   backdrop-filter: blur(3px);
   border-radius: 5px;
 }
@@ -764,7 +853,6 @@ div.flightinfo {
   height: auto;
   margin: 3px;
   white-space: nowrap;
-  /*     background-color: var(--color-white); */
 }
 .copyright p,
 .icons8 p {
@@ -783,6 +871,9 @@ div.flightinfo {
   }
   .lhsz_slogan {
     display: block;
+  }
+  main .events-content .event-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .contact form .input-box {
     display: flex;
@@ -836,6 +927,11 @@ div.flightinfo {
   main {
     margin-top: 0;
     width: calc(100vw - 150px);
+  }
+  main .about-content .memo-card {
+    grid-template-columns: 330px 1fr;
+    grid-template-areas: "IMAGE CONTENT";
+    justify-content: start;
   }
   footer {
     width: calc(100vw - 140px);

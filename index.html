@@ -6,6 +6,7 @@
     <title>LHSZ.HU - A Szentesi Repülőklub hivatalos oldala</title>
     <link rel="stylesheet" href="./css/index_style.css" />
     <link rel="stylesheet" href="./css/carousel_style.css" />
+    <link rel="stylesheet" href="./css/card_style.css" />
     <link rel="stylesheet" href="./css/codepilot_logo_style.css" />
     <link rel="stylesheet" href="./css/glowing_button_style.css" />
     <link rel="stylesheet" href="./css/slideshow_style.css" />
@@ -318,7 +319,7 @@
               fejlesztésekhez való kapcsolódási lehetőségekről és az augusztus
               05-ei I. Szentesi Traktoros Fesztivál tapasztalatairól is.
             </p>
-            <div class="sharethis-inline-share-buttons"></div>
+            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -344,7 +345,7 @@
                 WeGlide oldalon.</a
               >
             </p>
-            <div class="sharethis-inline-share-buttons"></div>
+            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -359,7 +360,7 @@
               alakítanak ki. A pálya karbantartás eredményeképpen jelentősen
               javul a reptéri pálya minősége és lecsökken a belvizesedés esélye.
             </p>
-            <div class="sharethis-inline-share-buttons"></div>
+            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -373,7 +374,7 @@
               aki idén szakszót szerez. Gratulálunk! Jöhetnek a típusvizsgák és
               a távrepülések!
             </p>
-            <div class="sharethis-inline-share-buttons"></div>
+            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -384,7 +385,7 @@
               Célegyenesben a klub PW-5 típusú vitorlázógépének
               légialkalmassága.
             </p>
-            <div class="sharethis-inline-share-buttons"></div>
+            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
         </section>
         <!--             RÓLUNK -->
@@ -688,7 +689,9 @@
                 />
                 <ul>
                   <li>Batta Sándor</li>
-                  <li>vitorlázórepülő oktató, motoros repülő, vontatópilóta</li>
+                  <li>vitorlázórepülő oktató</li>
+                  <li>motoros repülő</li>
+                  <li>vontatópilóta</li>
                   <li>a szentesi régi repülőtér egykori parancsnoka</li>
                   <li>A Szentesi Repülőklub tiszteletbeli tagja</li>
                   <li>Elhunyt 2006-ban</li>
@@ -726,7 +729,9 @@
                 />
                 <ul>
                   <li>Hári László</li>
-                  <li>vitorlázórepülő, motoros repülő, vontatópilóta</li>
+                  <li>vitorlázórepülő</li>
+                  <li>motoros repülő</li>
+                  <li>vontatópilóta</li>
                   <li>A Szentesi Repülőklub egykori elnöke</li>
                   <li>A Szentesi Repülőklub alapító tagja</li>
                   <li>Elhunyt 2018-ban</li>
@@ -739,8 +744,55 @@
         <!--             RENDEZVÉNYEK -->
         <section class="events-content">
           <h2>Rendezvények</h2>
+          <div class="event-grid">
+            <div class="card">
+              <img
+                src="./resources/events_images/rcsn_grid.jpg"
+                alt="Szentesi Reptéri Családi Nap"
+              />
+              <div class="card-content design-glblue">
+                <a class="glowing-button" href="#rcsn-ref"
+                  >Szentesi Reptéri Családi Nap</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./resources/events_images/rm_grid.jpg"
+                alt="Szentesi Reptéri Majális"
+              />
+              <div class="card-content design-glblue">
+                <a class="glowing-button" href="#rm-ref"
+                  >Szentesi Reptéri Majális</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./resources/events_images/trf_grid.jpg"
+                alt="Szentesi Tarktoros Fesztivál"
+              />
+              <div class="card-content design-glblue">
+                <a class="glowing-button" href="#trf-ref"
+                  >Szentesi Tarktoros Fesztivál</a
+                >
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./resources/events_images/vagycsome_grid.jpg"
+                alt="Gyengénlátók repülése"
+              />
+              <div class="card-content design-glblue">
+                <a class="glowing-button" href="#vagycsome-ref"
+                  >Gyengénlátók repülése</a
+                >
+              </div>
+            </div>
+          </div>
+
           <article>
-            <h3>Szentesi Reptéri Családi Nap</h3>
+            <h3 id="rcsn-ref">Szentesi Reptéri Családi Nap</h3>
             <img
               src="./resources/events_images/repteri_csaladi_nap.jpg"
               alt="Szentesi Reptéri Családi Nap plakát"
@@ -809,7 +861,7 @@
             >
           </article>
           <article>
-            <h3>Szentesi Reptéri Majális</h3>
+            <h3 id="rm-ref">Szentesi Reptéri Majális</h3>
             <img
               src="./resources/events_images/repteri_majalis.jpg"
               alt="Szentesi Reptéri Majális plakát"
@@ -874,14 +926,14 @@
             >
           </article>
           <article>
-            <h3>I. Szentesi Tarktoros Fesztivál</h3>
+            <h3 id="trf-ref">I. Szentesi Traktoros Fesztivál</h3>
             <img
               src="./resources/events_images/traktoros_fesztival.jpg"
               alt="I. Szentesi Tarktoros Fesztivál plakát"
             />
             <p>
               2023. augusztus 05-én a szentesi repülőtér szolgált az I. Szentesi
-              Tarktoros Fesztivál helyszínéül. A Szentesi Repülőklub csatlakozva
+              Traktoros Fesztivál helyszínéül. A Szentesi Repülőklub csatlakozva
               a rendezvényhez többféle saját és vendég repülőgéppel biztosított
               sétarepülési lehetőséget.
             </p>
@@ -907,9 +959,321 @@
               A Szentesi Mozaik portál bejegyzése a rendezvényről</a
             >
           </article>
+          <article>
+            <h3 id="vagycsome-ref">Gyengénlátók repülése</h3>
+            <p>
+              2023. augusztus 07-én első alkalommal fogadhattuk a Vakok és
+              Gyengénlátók Csongrád-Csanád Megyei Egyesületének (VAGYCSOME)
+              tagjait repterünkön. Látássérült látogatóink a szegedi
+              sárkányrepülésüket követően a klubunkat tisztelték meg azzal, hogy
+              a vitorlázórepülést kipróbálják. A program olyan sikeres volt,
+              hogy 2022. szeptemberben és 2023. júliusban is visszatértek
+              hozzánk.
+            </p>
+            <a
+              class="glowing-button"
+              href="https://www.facebook.com/watch/?v=5389181031170452"
+              target="_blank"
+            >
+              A gyengénlátók 2022. augusztusi repüléséről beszámoló a Szentes
+              TV-ben</a
+            >
+            <a
+              class="glowing-button"
+              href="https://www.facebook.com/watch/?v=811355489899298"
+              target="_blank"
+            >
+              A VAGYCSOME videója a 2022. augusztusi látogatásról</a
+            >
+            <a
+              class="glowing-button"
+              href="https://www.facebook.com/VAGYCSOME/posts/pfbid0jgs7yMkmvDKiK5MrjVEXynb99vQQPutHidDcjnHuEtaMxe4BnSr6DWoWUjtvJeejl"
+              target="_blank"
+            >
+              A VAGYCSOME bejegyzése a 2022. augusztusi látogatásról</a
+            >
+            <a
+              class="glowing-button"
+              href="https://www.facebook.com/VAGYCSOME/posts/pfbid0xmDiAgdnX6K1tYgCuVGpkaK49YxVCrJvzhAa1a7f8vxNzAtX1VAtWNxGAbov6hqLl"
+              target="_blank"
+            >
+              A VAGYCSOME bejegyzése a 2022. szeptemberi látogatásról</a
+            >
+            <a
+              class="glowing-button"
+              href="https://www.facebook.com/VAGYCSOME/posts/pfbid02iSEpwMxV7x5xmHGWEe71AjiGYAoDne5QviqS1dR9kbLsF94tfxYwAxPm8Po7BEN1l"
+              target="_blank"
+            >
+              A VAGYCSOME bejegyzése a 2022. szeptemberi látogatásról</a
+            >
+            <a
+              class="glowing-button"
+              href="https://www.facebook.com/VAGYCSOME/posts/pfbid0qEVJLDT3yC2mQRYHznPJLNcguq3d5Srw8qMeMwEi9ZEpxCgC3aoy8j8M5RK23EsXl"
+              target="_blank"
+            >
+              A VAGYCSOME bejegyzése a 2023. júliusi látogatásról</a
+            >
+          </article>
         </section>
-        <section class="services-content">SZOLGÁLTATÁSOK</section>
-        <section class="documents-content">DOKUMENTUMOK</section>
+        <section class="services-content">
+          <h2>Szolgáltatások</h2>
+          <div class="service-cards">
+            <div class="card">
+              <img
+                src="./resources/services-images/passenger_grid.jpg"
+                alt="Élményrepülés"
+              />
+              <div class="card-content design-glblue">
+                <a class="glowing-button" href="#flight">Élményrepülés</a>
+              </div>
+            </div>
+            <div class="card">
+              <img
+                src="./resources/services-images/pilot_grid.jpg"
+                alt="Pilótaképzés"
+              />
+              <div class="card-content design-glblue">
+                <a class="glowing-button" href="#pilot">Pilótaképzés</a>
+              </div>
+            </div>
+          </div>
+          <article>
+            <h3 id="flight">Élményrepülés</h3>
+            <p>
+              A Szentesi Repülőklub pilóta növendék toborzási célból nem
+              kereskedelmi jelleggel végez élményrepülési szolgáltatást. A
+              repülés az egyesület és a klubtagok tulajdonát képező kétüléses
+              repülőgépekkel lehetséges, így egyszerre csak a pilóta +1 fő utas
+              repülhet. Élményrepülést az alábbi típusokkal vállalunk:
+            </p>
+            <div class="services-element">
+              <img
+                src="./resources/services-images/gobe.jpg"
+                alt="R-26S Góbé"
+              />
+              <div class="services-text">
+                <h4>R-26S Góbé</h4>
+                <p>
+                  Vitorlázórepülés csőrlésből a magyar tervezésű és gyártású
+                  R-26S Góbé kiképző repülőgéppel. Az utas alapesetben a
+                  vitorlázógép első ülésében foglal helyet, ahonnan kiváló
+                  kilátás nyílik szinte minden irányba. A gépet egy
+                  csőrlőaggregátor intenzív emelkedéssel nagyjából 300 méter
+                  magasságba emeli. A csölrőkötél leoldását követően a hajtómű
+                  nélküli repülőgép szinte teljes csendben egy nagyjából öt
+                  perces iskolakört ír le a repülőtér felett, majd leszáll. A
+                  vitorlázó élményrepülést elsősorban az intenzívebb repülési
+                  élményt keresőknek ajánljuk.
+                </p>
+              </div>
+            </div>
+            <div class="services-element">
+              <img
+                src="./resources/services-images/falke.jpg"
+                alt="R-26S Góbé"
+              />
+              <div class="services-text">
+                <h4>SF-25C Falke</h4>
+                <p>
+                  Élményrepülés a német tervezésű és gyártású SF-25C Falke
+                  motoros-vitorlázógéppel. Az utas alapesetben a repülőgép jobb
+                  ülésében foglal helyet. A gép önerőből száll fel és
+                  biztonságos magasságban a légtérkorlátozások betartásával az
+                  utassal egyeztetett útvonalat repül le. A motoros vitorlázó
+                  élményrepülés kevésbé intenzív, inkább túra jellegű repülés,
+                  amely keretében a környékbeli települések és látnivalók
+                  tekinthetőek meg a magasból.
+                </p>
+              </div>
+            </div>
+            <h3>Az élményrepüléssel kapcsolatos további tudnivalók</h3>
+            <div class="services-element">
+              <img
+                src="./resources/services-images/passenger_height.jpg"
+                alt="Utas magassága"
+              />
+              <div class="services-text">
+                <h4>Az utas magassága</h4>
+                <p>
+                  Az élményrepülésre használt repülőgépeink pilótafülkéiben igen
+                  korlátozott a férőhely. Általánosságban azt mondhatjuk, hogy
+                  190 cm utas testmagasság felett a repülés kényelmetlenné vagy
+                  akár lehetetlenné is válhat, amennyiben a kabintető nem
+                  zárható rendesen. A fentiek miatt az ennél magasabb utasok
+                  repültetését kizárólag a pilóta egyedi elbírálása alapján
+                  vállaljuk.
+                </p>
+              </div>
+            </div>
+            <div class="services-element">
+              <img
+                src="./resources/services-images/passenger_weight.png"
+                alt="Utas testsúlya"
+              />
+              <div class="services-text">
+                <h4>Az utas testsúlya</h4>
+                <p>
+                  Az élményrepülésre használt repülőgépeink terhelhetősége is
+                  erősen korlátozott. Ráadásul a repülőgépeknél a súlypont
+                  helyzete is jelentősen befolyásolja a repülési jellemzőket.
+                  Általánosságban az mondható, hogy a legfeljebb 110 kg
+                  testsúlyú utasok minden gond nélkül repülhetnek. Az ennél
+                  nagyobb testsúlyú utasok repültetését kizárólag a pilóta
+                  egyedi elbírálása alapján vállaljuk.
+                </p>
+              </div>
+            </div>
+            <div class="services-element">
+              <img
+                src="./resources/services-images/passenger_kid.jpg"
+                alt="Utas éltekora"
+              />
+              <div class="services-text">
+                <h4>Az utas éltekora</h4>
+                <p>
+                  Az élményrepülés során a repülőgépek kezelőszervei az utas
+                  részéről is ugyanúgy elérhetőek, így egy felelőtlen vagy
+                  véleltlen mozdulat a kezelőszerveknél akár komolyabb repülési
+                  problémákhoz is vezethet. A fentiek miatt 10 év alatti gyermek
+                  utasok repültetését kizárólag a pilóta egyedi elbírálása
+                  alapján vállaljuk.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article>
+            <h3 id="pilot">Pilótaképzés</h3>
+            <p>
+              A Szentesi Repülőklub alapvetően vitorlázó pilóta képzést, egyedi
+              esetben könnyűrepülő pilóta képzést vállal. Mindkét fajta képzés a
+              Magyar Vitorlázórepülő Szövetség Képzési Szervezete keretében az
+              ott kidolgozott és alkalmazott kiképzési tematika szerint végzi. A
+              kiképzés klub rendszerben történik, azaz a pilótanövendék az
+              egyesület tagjává válik, és aktívan részt vesz a klub mindennapi
+              életében, a repülőüzem működtetésében.
+            </p>
+            <div class="services-element">
+              <img
+                src="./resources/services-images/spl_glider.jpg"
+                alt="Vitorlázó pilóta képzés"
+              />
+              <div class="services-text">
+                <p>
+                  A vitorlázórepülő pilóta képzés a SPL (Soaring Pilot Licence -
+                  Vitorlázórepülő Pilóta Szakszolgálati Engedély) megszerzésére
+                  irányul. A vitorlázórepülő képzésről részletesebben az alábbi
+                  linken található tájékoztatóban olvashatsz:
+                </p>
+                <a class="glowing-button" href="#" target="_blank">
+                  SPL képzési tájékoztató</a
+                >
+                <p>
+                  A könnyűrepülő pilóta képzés a LAPL (Light Aircraft Pilot
+                  Licence - Könnyű Repülőgép Pilóta Szakszolgálati Engedély)
+                  megszerzésére irányul. A könnyűrepülő képzésről részletesebben
+                  az alábbi linken található tájékoztatóban olvashatsz:
+                </p>
+                <a class="glowing-button" href="#" target="_blank">
+                  LAPL képzési tájékoztató</a
+                >
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="documents-content">
+          <h2>Dokumentumok</h2>
+          <article>
+            <h3 id="main-docs">Alapokmányok</h3>
+            <div class="documents-element">
+              <p>A Szentesi Repülőklub Alapszabálya</p>
+              <p>Keltezés: 2018.07.31.</p>
+              <a
+                class="glowing-button"
+                href="./resources/documents/szrk_alapszabaly_2018_07_31.pdf"
+                target="_blank"
+                >Alapszabály letöltése</a
+              >
+            </div>
+          </article>
+          <article>
+            <h3 id="assembly-docs">Közgyűlési okmányok</h3>
+            <div class="documents-element">
+              <p>Közgyűlés jegyzőkönyv</p>
+              <p>Keltezés: 2023.10.15.</p>
+              <a class="glowing-button" href="#">Jegyzőkönyv letöltése</a>
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés meghívó</p>
+              <p>Keltezés: 2023.10.01.</p>
+              <a
+                class="glowing-button"
+                href="./resources/documents/kozgyules_meghivo_2023_10_15.pdf"
+                target="_blank"
+                >Meghívó letöltése</a
+              >
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés jegyzőkönyv</p>
+              <p>Keltezés: 2023.02.12.</p>
+              <a class="glowing-button" href="#">Jegyzőkönyv letöltése</a>
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés meghívó</p>
+              <p>Keltezés: 2023.02.06.</p>
+              <a
+                class="glowing-button"
+                href="./resources/documents/kozgyules_meghivo_2023_02_12.pdf"
+                target="_blank"
+                >Meghívó letöltése</a
+              >
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés jegyzőkönyv</p>
+              <p>Keltezés: 2021.10.02.</p>
+              <a class="glowing-button" href="#">Jegyzőkönyv letöltése</a>
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés meghívó</p>
+              <p>Keltezés: 2021.09.12.</p>
+              <a
+                class="glowing-button"
+                href="./resources/documents/kozgyules_meghivo_2021_10_02.pdf"
+                target="_blank"
+                >Meghívó letöltése</a
+              >
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés jegyzőkönyv</p>
+              <p>Keltezés: 2019.03.02.</p>
+              <a class="glowing-button" href="#">Jegyzőkönyv letöltése</a>
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés meghívó</p>
+              <p>Keltezés: 2019.02.15.</p>
+              <a
+                class="glowing-button"
+                href="./resources/documents/kozgyules_meghivo_2019_03_02.pdf"
+                target="_blank"
+                >Meghívó letöltése</a
+              >
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés jegyzőkönyv</p>
+              <p>Keltezés: 2019.01.19.</p>
+              <a class="glowing-button" href="#">Jegyzőkönyv letöltése</a>
+            </div>
+            <div class="documents-element">
+              <p>Közgyűlés meghívó</p>
+              <p>Keltezés: 2019.01.04.</p>
+              <a
+                class="glowing-button"
+                href="./resources/documents/kozgyules_meghivo_2019_01_19.pdf"
+                target="_blank"
+                >Meghívó letöltése</a
+              >
+            </div>
+          </article>
+        </section>
         <section class="contact-content">
           <div class="contact">
             <h2>Lépj velünk kapcsolatba!</h2>
