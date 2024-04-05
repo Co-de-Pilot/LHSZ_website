@@ -373,7 +373,7 @@ main section.actualsection {
   display: flex;
 }
 main section > h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -704,7 +704,6 @@ form button.glowing-button {
   cursor: pointer;
   margin: 10px;
 }
-
 .map {
   grid-area: MAP;
   text-align: center;
@@ -727,8 +726,12 @@ footer {
   position: fixed;
   bottom: 0;
 }
+/* footer .footer-toggles {
+  display: flex;
+  justify-content: space-between;
+} */
 /* ------------------------------ */
-/* A FOOTER/FLIGHTINFO rész elemeinek beállítása */
+/* A FLIGHTINFO rész elemeinek beállítása */
 /* ------------------------------ */
 div.flightinfo {
   position: absolute;
@@ -813,6 +816,32 @@ div.flightinfo {
   display: block;
 }
 
+/* ------------------------------ */
+/* A CLICKTOCALL rész elemeinek beállítása */
+/* ------------------------------ */
+div.clicktocall {
+  position: absolute;
+  top: -8vh;
+  left: calc(100% - 58px);
+}
+
+div.clicktocall-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  color: var(--color-font);
+  backdrop-filter: blur(3px);
+  border-radius: 5px;
+  z-index: 10;
+}
+
+/* ----------------------------- */
+/* A FOOTER ITEMS elemeinek beállítása */
+/* ----------------------------- */
 .footer_items {
   display: flex;
   justify-content: center;
