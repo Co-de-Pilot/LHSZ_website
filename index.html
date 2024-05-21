@@ -10,8 +10,58 @@
     <link rel="stylesheet" href="./css/codepilot_logo_style.css" />
     <link rel="stylesheet" href="./css/glowing_button_style.css" />
     <link rel="stylesheet" href="./css/slideshow_style.css" />
+    <link rel="stylesheet" href="./css/open_anim_style.css" />
   </head>
   <body>
+    <section class="slider">
+      <div class="list">
+        <div class="item active">
+          <div
+            class="image"
+            style="
+              --url: url('../resources/index_images/open_animation/lhsz_open_anim_1.jpg');
+            "
+          ></div>
+          <div class="content">
+            <h2><span>L</span>ÉGY OTT</h2>
+          </div>
+        </div>
+        <div class="item">
+          <div
+            class="image"
+            style="
+              --url: url('../resources/index_images/open_animation/lhsz_open_anim_2.jpg');
+            "
+          ></div>
+          <div class="content">
+            <h2><span>H</span>OGY</h2>
+          </div>
+        </div>
+        <div class="item">
+          <div
+            class="image"
+            style="
+              --url: url('../resources/index_images/open_animation/lhsz_open_anim_3.jpg');
+            "
+          ></div>
+          <div class="content">
+            <h2><span>SZ</span>ÁRNYALJ</h2>
+          </div>
+        </div>
+        <div class="item">
+          <div
+            class="image"
+            style="
+              --url: url('../resources/index_images/open_animation/lhsz_open_anim_4.jpg');
+            "
+          ></div>
+          <div class="content">
+            <h2><span>LHSZ</span></h2>
+            <h2>SZENTESI REPÜLŐTÉR</h2>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="body-wrapper">
       <header>
         <div class="header_items design-glblue">
@@ -37,7 +87,6 @@
       </header>
       <nav>
         <ul class="toggle design-glblue">
-          <li class="sr-only">Menü</li>
           <li></li>
           <li></li>
           <li></li>
@@ -52,12 +101,6 @@
           <li>
             <a class="glowing-button" data-text="about-content" href="#"
               ><span class="button-text">Rólunk</span>
-              <span class="top-bottom"></span><span class="left-right"></span
-            ></a>
-          </li>
-          <li>
-            <a class="glowing-button" data-text="members-content" href="#"
-              ><span class="button-text">Tagoknak</span>
               <span class="top-bottom"></span><span class="left-right"></span
             ></a>
           </li>
@@ -314,7 +357,6 @@
               fejlesztésekhez való kapcsolódási lehetőségekről és az augusztus
               05-ei I. Szentesi Traktoros Fesztivál tapasztalatairól is.
             </p>
-            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -340,7 +382,6 @@
                 WeGlide oldalon.</a
               >
             </p>
-            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -355,7 +396,6 @@
               alakítanak ki. A pálya karbantartás eredményeképpen jelentősen
               javul a reptéri pálya minősége és lecsökken a belvizesedés esélye.
             </p>
-            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -369,7 +409,6 @@
               aki idén szakszót szerez. Gratulálunk! Jöhetnek a típusvizsgák és
               a távrepülések!
             </p>
-            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
           <div class="news">
             <div class="news-headline">
@@ -380,7 +419,6 @@
               Célegyenesben a klub PW-5 típusú vitorlázógépének
               légialkalmassága.
             </p>
-            <!--             <div class="sharethis-inline-share-buttons"></div> -->
           </div>
         </section>
         <!--             RÓLUNK -->
@@ -855,10 +893,6 @@
             </div>
           </article>
         </section>
-        <!--             TAGOKNAK -->
-        <section class="members-content">
-          <h2>ÉPÍTÉS ALATT!</h2>
-        </section>
         <!--             RENDEZVÉNYEK -->
         <section class="events-content">
           <h2>Rendezvények</h2>
@@ -1177,7 +1211,7 @@
                   vitorlázógép első ülésében foglal helyet, ahonnan kiváló
                   kilátás nyílik szinte minden irányba. A gépet egy
                   csőrlőaggregátor intenzív emelkedéssel nagyjából 300 méter
-                  magasságba emeli. A csölrőkötél leoldását követően a hajtómű
+                  magasságba emeli. A csörlőkötél leoldását követően a hajtómű
                   nélküli repülőgép szinte teljes csendben egy nagyjából öt
                   perces iskolakört ír le a repülőtér felett, majd leszáll. A
                   vitorlázó élményrepülést elsősorban az intenzívebb repülési
@@ -1412,7 +1446,6 @@
                 name="_next"
                 value="https://co-de-pilot.github.io/message_succes.html"
               />
-              <!--                     <input type="hidden" name="_cc" value="elnok@lhsz.hu,info@lhsz.hu"/> -->
               <div class="input-box">
                 <div class="input-field field">
                   <input
@@ -1515,6 +1548,16 @@
             <li>
               <a
                 class="glowing-button"
+                href="https://www.facebook.com/groups/szentesirepuloklub"
+                target="_blank"
+              >
+                <span class="button-text">Facebook Csoport</span>
+                <span class="top-bottom"></span><span class="left-right"></span
+              ></a>
+            </li>
+            <li>
+              <a
+                class="glowing-button"
                 href="https://cumuluslog.com/login/"
                 target="_blank"
               >
@@ -1606,7 +1649,7 @@
             </p>
           </div>
           <div class="copyright">
-            <p>Copyright © 2023 József Nógrádi</p>
+            <p>Copyright © 2024 Szentesi Repülőklub</p>
           </div>
         </div>
       </footer>

@@ -1,8 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'); */
-
 :root {
-  /*     --color_font: rgba(80,0,0, 0.8);
-    --color_white: rgba(255, 255, 255); */
   --thumbnail-width: 110px;
   --thumbnail-height: 110px;
   --thumbnail-left: 50%;

@@ -12,8 +12,8 @@ const asideToggle = document.querySelector("aside .aside_toggle");
 const asideList = document.querySelector("aside .aside_content");
 
 asideToggle.addEventListener("click", () => {
-    asideToggle.classList.toggle("aside-active");
-    asideList.classList.toggle("aside-active");
+  asideToggle.classList.toggle("aside-active");
+  asideList.classList.toggle("aside-active");
 });
 
 /* FLIGHTINFO TOGGLE vezérlése */
@@ -23,8 +23,8 @@ const flightinfoToggle = document.querySelector(
 const flightinfoList = document.querySelector(".flightinfo .flightinfo-menu");
 
 flightinfoToggle.addEventListener("click", () => {
-    flightinfoToggle.classList.toggle("flightinfo-active");
-    flightinfoList.classList.toggle("flightinfo-active");
+  flightinfoToggle.classList.toggle("flightinfo-active");
+  flightinfoList.classList.toggle("flightinfo-active");
 });
 
 /* MENU vezérlése */
@@ -177,3 +177,33 @@ function showSlider(type) {
     nextArrow.click();
   }, timeAutoNext);
 }
+
+/* Nyitó Animáció vezérlése */
+const openAnimItems = document.querySelectorAll(".slider .item");
+const openAnim = document.querySelector(".slider");
+let active = 0;
+
+setTimeout(nextSlide, 4000);
+
+function nextSlide() {
+  openAnimItems[active].classList.remove("active");
+  if (active >= openAnimItems.length - 1) {
+    setTimeout(function () {
+      openAnim.classList.add("d-none");
+    }, 2000);
+    return;
+  } else {
+    active++;
+  }
+  openAnimItems[active].classList.add("active");
+  setTimeout(nextSlide, 4000);
+}
+
+const setDiameter = () => {
+  let width = openAnim.offsetWidth;
+  let height = openAnim.offsetHeight;
+  let diameter = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)) + 80;
+  document.documentElement.style.setProperty("--diameter", diameter + "px");
+};
+setDiameter();
+window.addEventListener("resize", setDiameter);
