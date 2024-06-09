@@ -179,8 +179,9 @@ function showSlider(type) {
 }
 
 /* Nyitó Animáció vezérlése */
-const openAnimItems = document.querySelectorAll(".slider .item");
-const openAnim = document.querySelector(".slider");
+const openAnimItems = document.querySelectorAll(".open-anim .item");
+const openAnim = document.querySelector(".open-anim");
+const openAnimClose = document.querySelector(".open-anim svg");
 let active = 0;
 
 setTimeout(nextSlide, 4000);
@@ -207,3 +208,7 @@ const setDiameter = () => {
 };
 setDiameter();
 window.addEventListener("resize", setDiameter);
+
+openAnimClose.addEventListener("click", () => {
+  openAnim.classList.add("d-none");
+});

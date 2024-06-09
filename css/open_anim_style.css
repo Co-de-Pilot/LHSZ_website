@@ -1,15 +1,25 @@
 :root {
   --diameter: max(135vw, 135vh);
+  --anim-width: clamp(300px, 70vw, 800px);
 }
-.slider {
+.open-anim {
   color: var(--color-white-faded);
-  width: 100%;
-  height: 100vh;
+  width: var(--anim-width);
+  aspect-ratio: 1.5;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
+  top: calc((100vh - var(--anim-width) / 1.5) / 2);
+  left: calc((100vw - var(--anim-width)) / 2);
+  border-radius: 8px;
   z-index: 100;
   &.d-none {
     display: none;
+  }
+  & svg {
+    position: relative;
+    left: calc(100% - 40px);
+    z-index: 11;
+    cursor: pointer;
   }
   & .list .item {
     position: absolute;
@@ -65,13 +75,13 @@
       position: absolute;
       top: 20%;
       width: 50%;
-      font-size: 1.2rem;
+      /*       font-size: 1.2rem; */
       text-shadow: 0 0 80px #000;
       & h2 {
-        font-size: clamp(3.5rem, 5vw, 5rem);
+        font-size: clamp(2rem, 5vw, 5rem);
         opacity: 0;
         & span {
-          font-size: clamp(4.5rem, 7vw, 7rem);
+          font-size: clamp(3rem, 7vw, 7rem);
           color: var(--color-active-red);
         }
       }
